@@ -7,13 +7,59 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
-
     <h1 class="govuk-heading-xl">
       {{ serviceName }}
     </h1>
 
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
+  </div>
+</div>
+
+
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col">Version</th>
+            <th class="govuk-table__header" scope="col">Date</th>
+            <th class="govuk-table__header" scope="col">Status</th>
+          </tr>
+        </thead>
+
+      <h3 class="govuk-heading-m govuk-!-padding-top-4">
+        Alpha
+      </h3>
+
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <a href="v1/index">Version 1</a>
+            </td>
+            <td class="govuk-table__cell">
+              January 2024
+            </td>
+            <td class="govuk-table__cell">
+              <strong class="govuk-tag govuk-tag--blue">
+              Not tested
+              </strong>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+      {# {{ govukWarningText({
+          text: "This prototype is being actively worked on - things might break or change very quickly",
+          iconFallbackText: "Warning"
+        }) }} #}
+
+
+    </div>
   </div>
 </div>
 

@@ -1,0 +1,132 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      {{ serviceName }}
+    </h1>
+
+  </div>
+</div>
+
+
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+<h2 class="govuk-heading-m">Initial screens</h2>
+<ul class="govuk-list govuk-list--bullet">      
+  <li>
+    <a class="govuk-link govuk-link--no-visited-state" href="start">
+      Start Page
+    </a>
+  </li>
+
+  <li>
+    <a class="govuk-link govuk-link--no-visited-state" href="before-you-start">
+    Before you start
+    </a>
+  </li>
+
+  <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="filter-question-1">
+      Filter question - do any of these apply to you?
+      </a>
+  </li>
+
+      <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="do-you-want-to-sign-in">
+      Do you want to sign in?
+      </a>
+  </li>
+
+      <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="overview-page">
+      Sign in
+      </a>
+  </li>
+
+    <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="overview-page">
+      What is the email address you need the notification of payment sent to?
+      </a>
+  </li>
+
+    <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="overview-page">
+        Is this email address correct?
+      </a>
+  </li>
+</ul>
+
+<h2 class="govuk-heading-m">Initial screens</h2>
+
+<ul class="govuk-list govuk-list--bullet">    
+    <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="overview-page">
+      Tell us your penalty details
+      </a>
+  </li>
+
+    <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="overview-page">
+      Sanctions and powers penalty for Ashcroft Limited
+      </a>
+  </li>
+
+    <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="overview-page">
+      The penalty A1234567 is already paid or partially paid
+      </a>
+  </li>
+
+    <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="overview-page">
+      You cannot use this service
+      </a>
+  </li>
+
+    <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="overview-page">
+      Enter card details
+      </a>
+
+  </li>
+      <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="overview-page">
+      Confirm your payment
+      </a>
+  </li>
+
+      <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="overview-page">
+      Confirmation page
+      </a>
+  </li>
+      <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="overview-page">
+      Confirmation email
+      </a>
+  </li>
+</ul>
+
+
+
+      {# {{ govukWarningText({
+          text: "This prototype is being actively worked on - things might break or change very quickly",
+          iconFallbackText: "Warning"
+        }) }} #}
+
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
