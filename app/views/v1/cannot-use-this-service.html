@@ -1,0 +1,88 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/path/of/next/page" method="post">
+
+        <h1 class="govuk-heading-xl">
+          You cannot use this service
+        </h1>
+
+<!-- Introduction and list -->
+      <p>
+        There may be a number of reasons that you cannot use this service. 
+        Please see the reasons below.
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the penalty has legal fees and you should not be in this digital service</li>
+        <li>the company has multiple penalties and you should not be in this digital service</li>
+        <li>there is a technical error with our systems</li>
+
+      </ul>
+
+
+<!-- Legal fees -->
+      <h2 class="govuk-heading-m">
+        Legal fees
+      </h2>
+
+        <p>
+        Lorem ipsum
+      </p>
+
+      <p>
+        If you still want to speak to someone, 
+        <a href="#">contact the Powers and Sanctions Helpline</a>
+        if you need to speak to someone about your penalty.
+      </p>
+
+
+
+<!-- Multiple penalties -->
+      <h2 class="govuk-heading-m">
+       Multiple penalties
+      </h2>
+
+      <p>
+        Lorem ipsum
+      </p>
+
+      <p>
+        If you still want to speak to someone, 
+        <a href="#">contact the Powers and Sanctions Helpline</a>
+        if you need to speak to someone about your penalty.
+      </p>
+
+      </form>
+
+<!-- Details -->
+      {# {{ govukDetails({
+        summaryText: "Where can I find these details?",
+        text: "Lorem ipsum.
+          The postcode will be on the address on the top right of your letter. 
+          If you do not have your penalty reference number, please contact Companies House"
+      }) }} #}
+
+      <p class="govuk-link">
+        <a href="">Is this page not working properly? (opens in a new tab)</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

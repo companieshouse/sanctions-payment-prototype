@@ -18,38 +18,67 @@
 
       <form class="form" action="/path/of/next/page" method="post">
 
-  <h1 class="govuk-heading-xl">
-    Is this email address correct?
-  </h1>
+        <h1 class="govuk-heading-xl">
+          Tell us your penalty details
+        </h1>
 
-<p class="govuk-body-l">{{data['email']}}</p>
+<!--- Penalty reference -->
+        {{ govukInput({
+          label: {
+            text: "What is the penalty reference number?",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          classes: "govuk-input--width-10",
+          hint: {
+            text: "This starts with an A and you'll find it on the penalty notice Companies House sent to you. For example, A1234567"
+          },
+          id: "penalty-reference",
+          name: "penaltyReference"
+        }) }}
 
 
-  {{ govukRadios({
-    name: "emailAddressCorrect",
-    fieldset: {
-    },
-    items: [
-      {
-        value: "yes",
-        text: "Yes, send the notification to this email address"
-      },
-      {
-        value: "no",
-        text: "No, go back"
-      }
-    ]
-  }) }}
+<!--- Postcode -->
+        {{ govukInput({
+          label: {
+            text: "What is the postcode the letter was sent to?",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          classes: "govuk-input--width-10",
+          hint: {
+            text: "For example, E1 9GT"
+          },
+          id: "postcode",
+          name: "postcode"
+        }) }}
 
-          {{ govukButton({
-            text: "Continue"
-          }) }}
+
+
+<!--- Button -->
+        {{ govukButton({
+          text: "Continue",
+            href: "penalty-paid"
+        }) }}
 
       </form>
 
-<p class="govuk-link">
-  <a href="">Is this page not working properly? (opens in a new tab)</a>
-</p>
+
+
+<!--- Details -->
+      {{ govukDetails({
+        summaryText: "Where can I find these details?",
+        text: "Lorem ipsum.
+          The postcode will be on the address on the top right of your letter. 
+          If you do not have your penalty reference number, please contact Companies House"
+      }) }}
+
+
+
+<!--- Link -->
+      <p class="govuk-link">
+        <a href="">Is this page not working properly? (opens in a new tab)</a>
+      </p>
 
     </div>
   </div>

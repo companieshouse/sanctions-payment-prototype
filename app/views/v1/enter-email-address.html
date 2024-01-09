@@ -22,7 +22,7 @@
 {{ govukInput({
   label: {
     text: "What is the email address you need the notification of payment sent to?",
-    classes: "govuk-label--l",
+    classes: "govuk-label--xl",
     isPageHeading: true
   },
   hint: {
@@ -34,7 +34,8 @@
 }) }}
 
 {{ govukButton({
-  text: "Continue"
+  text: "Continue",
+  href: "email-address-correct"
 }) }}
 
       </form>
