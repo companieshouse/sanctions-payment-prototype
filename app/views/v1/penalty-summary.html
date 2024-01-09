@@ -23,86 +23,66 @@
         </h1>
 
 
-<!--- Penalty reference -->
-       {% from "govuk/components/table/macro.njk" import govukTable %}
-
-{{ govukTable({
-  caption: "Lorem ipsum",
-  captionClasses: "govuk-table__caption--m",
-  firstCellIsHeader: true,
-  head: [
-    {
-      text: "Type of penalty",
-      classes: "govuk-!-width-one-third"
-    },
-    {
-      text: "Penalty reference",
-      classes: "govuk-!-width-one-quarter"
-    },
-    {
-      text: "Penalty reference",
-      classes: "govuk-!-width-one-quarter"
-    },
-    {
-      text: "Penalty amount",
-      classes: "govuk-!-width-one-quarter"
-    }
-  ],
-  rows: [
-    [
-      {
-        text: "First 6 weeks"
-      },
-      {
-        text: "£109.80 per week"
-      },
-      {
-        text: "£59.10 per week"
-      }
-    ],
-    [
-      {
-        text: "Next 33 weeks"
-      },
-      {
-        text: "£159.80 per week"
-      },
-      {
-        text: "£89.10 per week"
-      }
-    ],
-    [
-      {
-        text: "Total estimated pay"
-      },
-      {
-        text: "£4,282.20"
-      },
-      {
-        text: "£2,182.20"
-      }
-    ]
-  ]
-}) }}
+<!--- Penalty table -->
 
 
-<!--- Button -->
+    {{ govukTable({
+      caption: "Lorem ipsum",
+      captionClasses: "govuk-table__caption--m",
+      firstCellIsHeader: true,
+      head: [
+        {
+          text: "Type of penalty",
+          classes: "govuk-!-width-one-third"
+        },
+        {
+          text: "Penalty reference",
+          classes: "govuk-!-width-one-quarter"
+        },
+        {
+          text: "Payment deadline",
+          classes: "govuk-!-width-one-quarter"
+        },
+        {
+          text: "Penalty amount",
+          classes: "govuk-!-width-one-quarter"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "Minor offence - first penalty"
+          },
+          {
+            text: "A1234567"
+          },
+          {
+            text: "20 December 2023"
+          },
+          {
+            text: "£250"
+          }
+        ]
+      ]
+    }) }}
+
+
+<!--- Button green -->
+      <div class="govuk-button-group">
         {{ govukButton({
-          text: "Continue",
-            href: "penalty-paid"
+          text: "Continue to card payment",
+            href: "card-details"
         }) }}
 
-      </form>
+<!--- Button grey -->
+        {{ govukButton({
+          text: "Add another penalty",
+          classes: "govuk-button--secondary",
+            href: "penalty-details"
+        }) }}
+      </div>
 
-
-
-<!--- Details -->
-      {{ govukDetails({
-        summaryText: "Where can I find these details?",
-        text: "Lorem ipsum.
-          The postcode will be on the address on the top right of your letter. 
-          If you do not have your penalty reference number, please contact Companies House"
-      }) }}
+  </form>
 
 
 
