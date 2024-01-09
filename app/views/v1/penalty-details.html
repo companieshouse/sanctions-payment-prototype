@@ -18,9 +18,18 @@
 
       <form class="form" action="/path/of/next/page" method="post">
 
-        <h1 class="govuk-heading-xl">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
           Tell us your penalty details
         </h1>
+
+
+<!--- Inset text -->
+
+     {{ govukInsetText({
+        text: "You can add more penalties later in the journey"
+      }) }} 
+
+      {# <p class="govuk-body"> You can add more penalties later in the journey</p> #}
 
 <!--- Penalty reference -->
         {{ govukInput({
@@ -58,7 +67,7 @@
 <!--- Button -->
         {{ govukButton({
           text: "Continue",
-            href: "penalty-paid"
+            href: "penalty-summary"
         }) }}
 
       </form>
@@ -88,7 +97,7 @@
       </p>
 
       <p class="govuk-body-s govuk-link--no-visited-state">
-        <a href="cannot-use-this-service">Stop screen: cannot use this service</a>
+        <a href="penalty-cannot-use-this-service">Stop screen: cannot use this service</a>
       </p>
 
     </div>
