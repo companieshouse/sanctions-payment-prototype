@@ -21,7 +21,9 @@
         <h1 class="govuk-heading-xl">
           Sanctions and powers penalty for Ashcroft Limited
         </h1>
+</div>
 
+<div class="govuk-grid-column-full-width">
 
 <!--- Penalty table -->
 
@@ -46,6 +48,10 @@
         {
           text: "Penalty amount",
           classes: "govuk-!-width-one-quarter"
+        },
+        {
+          text: "Link",
+          classes: "govuk-!-visually-hidden"
         }
       ],
       rows: [
@@ -61,6 +67,10 @@
           },
           {
             text: "£250"
+          },
+          {
+            text: "Remove and pay later",
+            classes: "govuk-"
           }
         ]
       ]
@@ -71,7 +81,7 @@
       <div class="govuk-button-group">
         {{ govukButton({
           text: "Continue to card payment",
-            href: "card-payment"
+            href: "card-details"
         }) }}
 
 <!--- Button grey -->
