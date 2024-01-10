@@ -16,11 +16,12 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/path/of/next/page" method="post">
+      <form class="form" action="/v1/filter-question" method="post">
 
 
 {{ govukCheckboxes({
-  name: "countries",
+  name: "applyToYou",
+  values: data["apply-to-you"],
   fieldset: {
     legend: {
       text: "Do any of these apply to you?",
@@ -33,15 +34,15 @@
   },
   items: [
     {
-      value: "france",
+      value: "multiple",
       text: "I need to pay multiple penalties and do not have a separate penalty reference for each one"
     },
     {
-      value: "portugal",
+      value: "instalment",
       text: "I require an instalment plan"
     },
     {
-      value: "spain",
+      value: "partial",
       text: "I have partially paid a penalty or am already on an instalment plan"
     },
     {
@@ -56,8 +57,7 @@
 }) }}
 
         {{ govukButton({
-          text: "Continue",
-          href: "do-you-want-to-sign-in"
+          text: "Continue"
         }) }}
 
       </form>

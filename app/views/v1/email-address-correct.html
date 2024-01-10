@@ -16,7 +16,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/path/of/next/page" method="post">
+      <form class="form" action="/v1/email-address-correct" method="post">
 
   <h1 class="govuk-heading-xl">
     Is this email address correct?
@@ -25,8 +25,10 @@
 <p class="govuk-body-l">{{data['email']}}</p>
 
 
+
   {{ govukRadios({
     name: "emailAddressCorrect",
+    values: data["email-address-correct"],
     fieldset: {
     },
     items: [
@@ -42,8 +44,7 @@
   }) }}
 
           {{ govukButton({
-            text: "Continue",
-            href: "penalty-details"
+            text: "Continue"
           }) }}
 
       </form>
