@@ -21,7 +21,7 @@
         <h1 class="govuk-heading-xl">
           Sanctions and powers penalty for Ashcroft Limited
         </h1>
-    </div>
+</div>
 
 <div class="govuk-grid-column-full-width">
 
@@ -69,8 +69,9 @@
             text: "£250"
           },
           {
-            html: '<p class="govuk-body govuk-link"><a href="">Remove and pay later</a></p>'
-
+            html: '<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Remove
+                  </button>'
           }
         ],
                 [
@@ -87,27 +88,44 @@
             text: "£250"
           },
           {
-            html: '<p class="govuk-body govuk-link"><a href="">Remove and pay later</a></p>'
+            html: '<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Remove
+                  </button>'
           }
         ]
       ]
     }) }}
 
 
+{{ govukRadios({
+  name: "addPenalty",
+  fieldset: {
+    legend: {
+      text: "Do you want to add another penalty?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No, continue to card payment"
+    }
+  ]
+}) }}
+
+
+
 <!--- Button green -->
-      <div class="govuk-button-group">
+
         {{ govukButton({
-          text: "Continue to card payment",
+          text: "Continue",
             href: "card-payment"
         }) }}
-
-<!--- Button grey -->
-        {{ govukButton({
-          text: "Add another penalty",
-          classes: "govuk-button--secondary",
-            href: "penalty-details"
-        }) }}
-      </div>
 
   </form>
 
