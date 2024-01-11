@@ -35,7 +35,7 @@
         {{ govukInput({
           label: {
             text: "What is the penalty reference number?",
-            classes: "govuk-label--l",
+            classes: "govuk-label--m",
             isPageHeading: true
           },
           classes: "govuk-input--width-10",
@@ -50,13 +50,13 @@
 <!--- Postcode -->
         {{ govukInput({
           label: {
-            text: "What is the postcode the letter was sent to?",
-            classes: "govuk-label--l",
+            text: "What is the customer number?",
+            classes: "govuk-label--m",
             isPageHeading: true
           },
           classes: "govuk-input--width-10",
           hint: {
-            text: "For example, E1 9GT"
+            text: "This could be your company number or ACSP number"
           },
           id: "postcode",
           name: "postcode"
@@ -77,28 +77,41 @@
 <!--- Details -->
       {{ govukDetails({
         summaryText: "Where can I find these details?",
-        text: "Lorem ipsum.
-          The postcode will be on the address on the top right of your letter. 
-          If you do not have your penalty reference number, please contact Companies House"
-      }) }}
+        html: '<p>Lorem ipsum.
+          If you do not have your penalty reference number, please contact Companies House.
+          If you do not have these details <a href="">contact us.</a></p>'
+      }) }} 
 
 
 
-<!--- Link -->
-      <p class="govuk-link--no-visited-state">
-        <a href="">Is this page not working properly? (opens in a new tab)</a>
+<!-- Links for testing-->
+<div class="govuk-!-margin-top-9">
+      <p class="govuk-body-xs">
+        <a href="stop-penalty-paid" class="govuk-link--no-visited-state">Stop screen: penalty paid</a>
       </p>
 
-
-
-<!--- Links for testing-->
-      <p class="govuk-body-s govuk-link--no-visited-state">
-        <a href="penalty-paid">Stop screen: penalty paid</a>
+      <p class="govuk-body-xs govuk-link--no-visited-state">
+        <a href="stop-penalty-cannot-use-this-service" class="govuk-link--no-visited-state">Stop screen: cannot use this service</a>
       </p>
 
-      <p class="govuk-body-s govuk-link--no-visited-state">
-        <a href="penalty-cannot-use-this-service">Stop screen: cannot use this service</a>
+      {# 
+      
+      Add in here links to the other stop screens
+      <p class="govuk-body-xs govuk-link--no-visited-state">
+        <a href="stop-penalty-cannot-use-this-service" class="govuk-link--no-visited-state">Stop screen: cannot use this service</a>
       </p>
+
+      <p class="govuk-body-xs govuk-link--no-visited-state">
+        <a href="stop-penalty-cannot-use-this-service" class="govuk-link--no-visited-state">Stop screen: cannot use this service</a>
+      </p>
+
+      <p class="govuk-body-xs govuk-link--no-visited-state">
+        <a href="stop-penalty-cannot-use-this-service" class="govuk-link--no-visited-state">Stop screen: cannot use this service</a>
+      </p> #}
+
+
+
+      </div>
 
     </div>
   </div>

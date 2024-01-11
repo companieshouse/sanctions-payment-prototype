@@ -16,7 +16,7 @@ router.post('/v1/filter-question', function(request, response) {
     if (exports.includes("none")){
         response.redirect("/v1/sign-in")
     } else {
-        response.redirect("/v1/cannot-use-online-service")
+        response.redirect("/v1/stop-cannot-use-online-service")
     }
 })
 
