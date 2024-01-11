@@ -19,6 +19,63 @@
       <form class="form" action="/v1/filter-question" method="post">
 
 
+<!-- ERROR Summary -->
+      {% if errorApply == true %}
+        {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: errorApply
+          }) }}
+      {% endif %}
+
+
+<!-- ERROR Checkboxes -->
+{% if errorApply == true %}
+{{ govukCheckboxes({
+    name: "applyToYou",
+    values: data["apply-to-you"],
+    fieldset: {
+      legend: {
+        text: "Do any of these apply to you?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--xl"
+      }
+    },
+    hint: {
+      text: "Select all that apply"
+    },
+  errorMessage: {
+    text: "Select if you are British, Irish or a citizen of a different country"
+  },
+    items: [
+      {
+        value: "multiple",
+        text: "I need to pay multiple penalties"
+      },
+      {
+        value: "instalment",
+        text: "I require an instalment plan"
+      },
+      {
+        value: "partial",
+        text: "I have partially paid a penalty or am already on an instalment plan"
+      },
+      {
+        value: "court",
+        text: "There are added court costs to my penalty"
+      },
+      {
+        divider: "or"
+      },
+      {
+        value: "none",
+        text: "None of the above",
+        behaviour: "exclusive"
+      }
+    ]
+  }) }}
+{% else %}
+
+
 <!-- Checkboxes -->
   {{ govukCheckboxes({
     name: "applyToYou",
@@ -60,6 +117,7 @@
       }
     ]
   }) }}
+{% endif %}
 
 
 <!-- button-->
