@@ -46,11 +46,20 @@
         <li>do something else</li>
       </ul>
 
+    
+
+<!--- Details -->
+      {{ govukDetails({
+        summaryText: "Help with nationality",
+        text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
+      }) }}
+
+
       <p>Registering takes around 5 minutes.</p>
 
       {{ govukButton({
         text: "Start now",
-        href: "before-you-start",
+        href: "filter-question",
         isStartButton: true
       }) }}
 
@@ -58,6 +67,30 @@
         Before you start
       </h2>
 
+  <!--- List -->
+      <p class="govuk-body">
+        Before starting this service you will need:
+      </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>apples</li>
+          <li>oranges</li>
+          <li>pears</li>
+        </ul>
+
+<!--- Before you start details -->
+      {{ govukDetails({
+        summaryText: "Where can I find these details?",
+        text: "MT to add image. We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
+      }) }}
+
+<!--- Text -->
+      <p>
+        This is a paragraph of text. It explains in more detail what has happened and wraps across several lines.
+      </p>
+
+      <p>
+        Read more <a href="/path/of/page">about this topic</a>.
+      </p> 
       <p>
         You can also <a href="#">register by post</a>.
       </p>
@@ -66,9 +99,7 @@
         The online service is also <a href="#">available in Welsh (ar gael yn Gymraeg)</a>.
       </p>
 
-      <p>
-        You can’t register for this service if you’re in the UK illegally.
-      </p>
+
 
     </div>
 
