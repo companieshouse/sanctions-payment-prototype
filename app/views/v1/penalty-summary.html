@@ -22,10 +22,15 @@
           Sanctions and powers penalty for Ashcroft Limited
         </h1>
 
+    </div>
+  </div>
+
+
 
 <!--- Penalty table -->
 
 
+<div class="govuk-grid-column-full-width">
     {{ govukTable({
       caption: "Lorem ipsum",
       captionClasses: "govuk-table__caption--m",
@@ -51,7 +56,7 @@
       rows: [
         [
           {
-            text: "Minor offence - first penalty"
+            text: "Sanctions"
           },
           {
             text: "A1234567"
@@ -68,30 +73,14 @@
 
 
 <!--- Button green -->
-      <div class="govuk-button-group">
+<!-- use card number 4000056655665556 -->
         {{ govukButton({
           text: "Continue to card payment",
-            href: "card-payment"
+            href: "https://products.payments.service.gov.uk/pay/81dafb56e27f404e9e6ab8b318affd8a"
         }) }}
-
-<!--- Button grey -->
-        {{ govukButton({
-          text: "Add another penalty",
-          classes: "govuk-button--secondary",
-            href: "penalty-details"
-        }) }}
-      </div>
 
   </form>
+</div>
 
-
-
-<!--- Link -->
-      <p class="govuk-link">
-        <a href="">Is this page not working properly? (opens in a new tab)</a>
-      </p>
-
-    </div>
-  </div>
 
 {% endblock %}

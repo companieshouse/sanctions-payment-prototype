@@ -19,43 +19,50 @@
       <form class="form" action="/v1/filter-question" method="post">
 
 
-{{ govukCheckboxes({
-  name: "applyToYou",
-  values: data["apply-to-you"],
-  fieldset: {
-    legend: {
-      text: "Do any of these apply to you?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--xl"
-    }
-  },
-  hint: {
-    text: "Select all that apply"
-  },
-  items: [
-    {
-      value: "multiple",
-      text: "I need to pay multiple penalties and do not have a separate penalty reference for each one"
+<!-- Checkboxes -->
+  {{ govukCheckboxes({
+    name: "applyToYou",
+    values: data["apply-to-you"],
+    fieldset: {
+      legend: {
+        text: "Do any of these apply to you?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--xl"
+      }
     },
-    {
-      value: "instalment",
-      text: "I require an instalment plan"
+    hint: {
+      text: "Select all that apply"
     },
-    {
-      value: "partial",
-      text: "I have partially paid a penalty or am already on an instalment plan"
-    },
-    {
-      divider: "or"
-    },
-    {
-      value: "none",
-      text: "None of the above",
-      behaviour: "exclusive"
-    }
-  ]
-}) }}
+    items: [
+      {
+        value: "multiple",
+        text: "I need to pay multiple penalties"
+      },
+      {
+        value: "instalment",
+        text: "I require an instalment plan"
+      },
+      {
+        value: "partial",
+        text: "I have partially paid a penalty or am already on an instalment plan"
+      },
+      {
+        value: "court",
+        text: "There are added court costs to my penalty"
+      },
+      {
+        divider: "or"
+      },
+      {
+        value: "none",
+        text: "None of the above",
+        behaviour: "exclusive"
+      }
+    ]
+  }) }}
 
+
+<!-- button-->
         {{ govukButton({
           text: "Continue"
         }) }}

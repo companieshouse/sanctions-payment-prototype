@@ -1,0 +1,161 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+{{ govukTag({
+  text: "Version 1",
+  classes: "govuk-tag--green"
+}) }}
+
+
+    <h1 class="govuk-heading-xl govuk-!-margin-top-4">
+      {{ serviceName }}
+    </h1>
+
+
+<h2 class="govuk-heading-m"></h2>
+<ul class="govuk-list govuk-list--bullet">      
+  <li>
+    <a class="govuk-link govuk-link--no-visited-state" href="start">
+      Start page
+    </a>
+  </li>
+
+  <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="filter-question">
+      Filter question - do any of these apply to you?
+      </a>
+  </li>
+
+      <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="sign-in">
+      Sign in
+      </a>
+  </li>
+    <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="penalty-details">
+      Tell us your penalty details
+      </a>
+  </li>
+
+    <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="penalty-summary">
+      Sanctions and powers penalty for Ashcroft Limited
+      </a>
+  </li>
+
+
+  <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="overview-page">
+      Confirmation page
+      </a>
+  </li>
+      <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="overview-page">
+      Confirmation email
+      </a>
+  </li>
+  </ul>
+
+
+<h2 class="govuk-heading-m">Stop screens</h2>
+<ul class="govuk-list govuk-list--bullet">    
+    <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="overview-page">
+      Stop screen: The penalty A1234567 is already paid or partially paid
+      </a>
+  </li>
+
+    <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="overview-page">
+      Stop screen: You cannot use this service
+      </a>
+  </li>
+
+</ul>
+
+<!-- Details component -->
+
+<div class="govuk-margin-top-6">
+  <details class="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Archived
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+  <ul class="govuk-list govuk-list--bullet">     
+
+  <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="archived/before-you-start">
+      Before you start
+      </a>
+    </li>
+
+    <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="archived/do-you-want-to-sign-in">
+      Do you want to sign in?
+      </a>
+    </li>
+
+    <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="archived/enter-email-address">
+      What is the email address you need the notification of payment sent to?
+      </a>
+    </li>
+
+    <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="archived/email-address-correct">
+      Is this email address correct?
+      </a>
+    </li>
+
+    <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="archived/penalty-summary-v2">
+      Penalty summary: Option 2
+      </a>
+    </li>
+
+    <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="archived/penalty-summary-v3">
+      Penalty summary: Option 3
+      </a>
+    </li>
+
+      <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="archived/card-payment">
+      Enter card details
+      </a>
+    </li>
+
+    <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="confirm-your-payment">
+      Confirm your payment
+      </a>
+    </li>
+    </ul>
+  </div>
+  </div>
+  
+</details>
+
+
+ 
+
+      {# {{ govukWarningText({
+          text: "This prototype is being actively worked on - things might break or change very quickly",
+          iconFallbackText: "Warning"
+        }) }} #}
+
+
+
+  </div>
+</div>
+
+{% endblock %}
