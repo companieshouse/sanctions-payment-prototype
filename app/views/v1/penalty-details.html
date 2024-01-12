@@ -16,7 +16,16 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/path/of/next/page" method="post">
+     {# <!-- Check for error -->
+      {% if errorPenaltyReference == true or errorCustomerNumber == true %}
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: errorList
+        }) }}
+      {% endif %} #}
+
+
+      <form action="{{currentUrl}}" method="post">
 
         <h1 class="govuk-heading-xl">
           Tell us your penalty details
@@ -30,6 +39,28 @@
 
 
 
+
+{# <!-- Check for error -->
+        {% if errorPenaltyReference %}
+<!--- ERROR Penalty reference -->
+        {{ govukInput({
+          label: {
+            text: "What is the penalty reference number?",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          classes: "govuk-input--width-10",
+          hint: {
+            text: "This starts with an A and you'll find it on the penalty notice Companies House sent to you. For example, A1234567"
+          },
+            errorMessage: {
+              text: "Enter a penalty reference number"
+            },
+          id: "penalty-reference",
+          name: "penaltyReference",
+          values: data["penalty-reference"]
+        }) }}
+        {% else %} #}
 
 <!--- Penalty reference -->
         {{ govukInput({
@@ -46,6 +77,10 @@
           name: "penaltyReference",
           values: data["penalty-reference"]
         }) }}
+{# {% endif %}  #}
+
+
+
 
 
 <!--- Customer number -->
@@ -68,8 +103,7 @@
 
 <!--- Button -->
         {{ govukButton({
-          text: "Continue",
-            href: "penalty-summary"
+          text: "Continue"
         }) }}
 
       </form>
