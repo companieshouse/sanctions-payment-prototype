@@ -10,15 +10,15 @@ const router = govukPrototypeKit.requests.setupRouter()
 // router.use('/', require('./routes/v1-routes.js'))
 
 // Filter question
-router.post('/v1/filter-question', function(request, response) {
+// router.post('/v1/filter-question', function(request, response) {
 
-    var exports = request.session.data['applyToYou']
-     if (exports == "none"){
-        response.redirect("/v1/sign-in")
-    } else {
-        response.redirect("/v1/stop-cannot-use-online-service")
-    }
-})
+//     var exports = request.session.data['applyToYou']
+//      if (exports == "none"){
+//         response.redirect("/v1/sign-in")
+//     } else {
+//         response.redirect("/v1/stop-cannot-use-online-service")
+//     }
+// })
 
 
 
@@ -48,56 +48,91 @@ router.post('/v1/filter-question', function(request, response) {
 
 
 // Errors -  v1 code
-module.exports = function (router) {
-    router.post('/v1/filter-question', function (req, res) {
-        var errors = [];
-        var errorApply = false;
+// module.exports = function (router) {
+//     router.post('/v1/filter-question', function (req, res) {
+//         var errors = [];
+//         var errorApply = false;
 
-        if (req.session.data['apply-to-you'] === '') {
-            errorApply = true;
-            errors.push({
-                text: 'Select any that apply',
-                href: '#applyToYou'
-            });
-        } else {
-            // Required fields have been captured and as such set the "are we signed in?" variable (gSignedIn) to TRUE
-            errorApply = true;  // Remove 'var' from here
-            res.redirect('/v1/sign-in');
-        }
-    });
-};
+//         if (req.session.data['apply-to-you'] === '') {
+//             errorApply = true;
+//             errors.push({
+//                 text: 'Select any that apply',
+//                 href: '#applyToYou'
+//             });
+//         } else {
+//             // Required fields have been captured and as such set the "are we signed in?" variable (gSignedIn) to TRUE
+//             errorApply = true;  // Remove 'var' from here
+//             res.redirect('/v1/sign-in');
+//         }
+//     });
+// };
 
 
 
 // ******* ERRORS - FILTER QUESTION  ************
-router.get('/v1/filter-question', function (req, res) {
+// router.get('/v1/filter-question', function (req, res) {
+//     // Set URl
+//     res.render('v1/filter-question', {
+//       currentUrl: req.originalUrl
+//     })
+//   })
+  
+//   router.post('/v1/filter-question', function (req, res) {
+//     // Create empty array
+//     var errors = []
+  
+//     // Check if user has filled out a value
+//     if (req.session.data['apply-to-you'] == '') {
+//       // No value so add error to array
+//       errors.push({
+//         text: 'Select any that apply',
+//         href: '#applyToYou'
+//       })
+  
+//       // Re-show page with error value as true so errors will show
+//       res.render('v1/filter-question', {
+//         errorEmail: true, 
+//         errorList: errors
+//       })
+//     } else {
+//       // User inputted value so move to next page
+//       res.redirect('/v1/sign-in')
+//     }
+//   })
+
+  // ******* filter-question ********************************
+  router.get('/v1/filter-question-copy', function (req, res) {
     // Set URl
-    res.render('v1/filter-question', {
+    res.render('v1/filter-question-copy', {
       currentUrl: req.originalUrl
     })
   })
   
-  router.post('/v1/filter-question', function (req, res) {
+  router.post('/v1/filter-question-copy', function (req, res) {
     // Create empty array
     var errors = []
   
     // Check if user has filled out a value
-    if (req.session.data['apply-to-you'] == '') {
-      // No value so add error to array
+    if (typeof req.session.data['applyToYou'] === 'undefined') {
+      // No value so add error to array (the Error summary)
       errors.push({
-        text: 'Select any that apply',
+        text: 'You must select a reason',
         href: '#applyToYou'
       })
   
       // Re-show page with error value as true so errors will show
-      res.render('v1/filter-question', {
-        errorEmail: true, 
+      res.render('v1/filter-question-copy', {
+        errorApplyToYou: true,
         errorList: errors
       })
     } else {
-      // User inputted value so move to next page
-      res.redirect('/v1/sign-in')
+          // User inputted a specific ,
+          if (req.session.data['applyToYou'] == 'none') {   // this was === which doesn't work, changing to == seems to work?!
+            res.redirect('/v1/sign-in')
+          } else {
+            // User inputted any other value
+            res.redirect('/v1/stop-cannot-use-online-service')
+          }
     }
   })
-
 

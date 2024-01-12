@@ -1,0 +1,92 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Do any of these apply to you? - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+     <!-- Check for error -->
+      {% if errorApplyToYou %}
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: errorList
+        }) }}
+      {% endif %}
+
+
+
+      <form action="{{currentUrl}}" method="post">
+
+
+    <!-- Check for error -->
+        {% if errorApplyToYou %}
+       Hello
+        {% else %}
+    
+
+<!-- Checkboxes -->
+  {{ govukCheckboxes({
+    name: "applyToYou",
+    values: data["apply-to-you"],
+    fieldset: {
+      legend: {
+        text: "Do any of these apply to you?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--xl"
+      }
+    },
+    hint: {
+      text: "Select all that apply"
+    },
+    items: [
+      {
+        value: "multiple",
+        text: "I need to pay multiple penalties"
+      },
+      {
+        value: "instalment",
+        text: "I require an instalment plan"
+      },
+      {
+        value: "partial",
+        text: "I have partially paid a penalty or am already on an instalment plan"
+      },
+      {
+        value: "court",
+        text: "There are added court costs to my penalty"
+      },
+      {
+        divider: "or"
+      },
+      {
+        value: "none",
+        text: "None of the above",
+        behaviour: "exclusive"
+      }
+    ]
+  }) }}
+    {% endif %} 
+
+<!-- button-->
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
