@@ -13,12 +13,13 @@ const router = govukPrototypeKit.requests.setupRouter()
 router.post('/v1/filter-question', function(request, response) {
 
     var exports = request.session.data['applyToYou']
-    if (exports.includes("none")){
+     if (exports == "none"){
         response.redirect("/v1/sign-in")
     } else {
         response.redirect("/v1/stop-cannot-use-online-service")
     }
 })
+
 
 
 
