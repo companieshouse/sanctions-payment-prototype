@@ -32,7 +32,7 @@
 
 <!-- Check for error -->
         {% if errorApplyToYou %}
-<!-- Error checkboxes -->
+<!-- Error Heading and checkboxes -->
   {{ govukCheckboxes({
     name: "applyToYou",
     values: data["apply-to-you"],
@@ -79,7 +79,7 @@
         {% else %}
     
 
-<!-- Checkboxes -->
+<!-- Heading and checkboxes -->
   {{ govukCheckboxes({
     name: "applyToYou",
     values: data["apply-to-you"],

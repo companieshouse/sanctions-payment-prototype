@@ -19,7 +19,7 @@
       <form class="form" action="/v1/do-you-want-to-sign-in" method="post">
 
 
-
+<!-- Heading and radio buttons -->
 {{ govukRadios({
   name: "penaltyType",
   value: data['penalty-type'],
@@ -46,6 +46,8 @@
   ]
 }) }}
 
+
+<!-- Button -->
         {{ govukButton({
           text: "Continue",
           href: "start"

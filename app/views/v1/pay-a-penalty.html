@@ -11,6 +11,7 @@
 
 {% block beforeContent %}
 
+<!-- Breadcrumbs -->
   {{ govukBreadcrumbs({
     items: [
       {
@@ -29,15 +30,19 @@
 
 {% endblock %}
 
+
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+<!-- Heading -->
       <h1 class="govuk-heading-xl">
         Pay a penalty to Companies House
       </h1>
 
+
+<!-- List -->
       <p>Use this service to pay a penalty for:</p>
 
       <ul class="govuk-list govuk-list--bullet">
@@ -48,7 +53,7 @@
 
 
 
-<!-- button -->
+<!-- Button -->
   {{ govukButton({
     text: "Continue",
     href: "which-penalty-service"
@@ -59,9 +64,6 @@
         summaryText: "Help with nationality",
         text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
       }) }} #}
-
-
-
 
     </div>
   </div>
