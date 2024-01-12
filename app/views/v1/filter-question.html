@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Question page template - {{ serviceName }} – GOV.UK Prototype Kit
+  Do any of these apply to you? - {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,21 +16,25 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v1/filter-question" method="post">
 
-
-<!-- ERROR Summary -->
-      {% if errorApply == true %}
+     <!-- Check for error -->
+      {% if errorApplyToYou %}
         {{ govukErrorSummary({
-            titleText: "There is a problem",
-            errorList: errorApply
-          }) }}
+          titleText: "There is a problem",
+          errorList: errorList
+        }) }}
       {% endif %}
 
 
-<!-- ERROR Checkboxes -->
-{% if errorApply == true %}
-{{ govukCheckboxes({
+
+      <form action="{{currentUrl}}" method="post">
+
+
+<!-- Check for error -->
+        {% if errorApplyToYou %}
+        
+<!-- Error checkboxes -->
+  {{ govukCheckboxes({
     name: "applyToYou",
     values: data["apply-to-you"],
     fieldset: {
@@ -44,7 +48,7 @@
       text: "Select all that apply"
     },
   errorMessage: {
-    text: "Select if you are British, Irish or a citizen of a different country"
+    text: "You must select any options that apply"
   },
     items: [
       {
@@ -73,8 +77,8 @@
       }
     ]
   }) }}
-{% else %}
-
+        {% else %}
+    
 
 <!-- Checkboxes -->
   {{ govukCheckboxes({
@@ -117,8 +121,7 @@
       }
     ]
   }) }}
-{% endif %}
-
+    {% endif %} 
 
 <!-- button-->
         {{ govukButton({

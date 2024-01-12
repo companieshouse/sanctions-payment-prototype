@@ -24,10 +24,11 @@
 
 
 <!--- Inset text - multiple penalties are on hold -->
-
      {# {{ govukInsetText({
         text: "You can add more penalties later in the journey"
       }) }}  #}
+
+
 
 
 <!--- Penalty reference -->
@@ -42,11 +43,12 @@
             text: "This starts with an A and you'll find it on the penalty notice Companies House sent to you. For example, A1234567"
           },
           id: "penalty-reference",
-          name: "penaltyReference"
+          name: "penaltyReference",
+          values: data["penalty-reference"]
         }) }}
 
 
-<!--- Postcode -->
+<!--- Customer number -->
         {{ govukInput({
           label: {
             text: "What is the customer number?",
@@ -57,8 +59,9 @@
           hint: {
             text: "This could be your company number or ACSP number"
           },
-          id: "postcode",
-          name: "postcode"
+          id: "customer-number",
+          name: "customerNumber",
+          values: data["customer-number"]
         }) }}
 
 
