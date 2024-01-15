@@ -28,7 +28,7 @@
       <form action="{{currentUrl}}" method="post">
 
         <h1 class="govuk-heading-xl">
-          Tell us your penalty details
+          Penalty details
         </h1>
 
 
@@ -51,7 +51,7 @@
           },
           classes: "govuk-input--width-10",
           hint: {
-            text: "This starts with an A and you'll find it on the penalty notice Companies House sent to you. For example, A1234567"
+            text: "This starts with a letter, followed by 7 numbers. For example, A1234567"
           },
             errorMessage: {
               text: "Enter a penalty reference number"
@@ -71,7 +71,7 @@
           },
           classes: "govuk-input--width-10",
           hint: {
-            text: "This starts with an A and you'll find it on the penalty notice Companies House sent to you. For example, A1234567"
+            text: "This starts with a letter, followed by 7 numbers. For example, A1234567"
           },
           id: "penalty-reference",
           name: "penaltyReference",
@@ -86,13 +86,13 @@
 <!--- Customer number -->
         {{ govukInput({
           label: {
-            text: "What is the customer number?",
+            text: "What is the company or entity number?",
             classes: "govuk-label--m",
             isPageHeading: true
           },
           classes: "govuk-input--width-10",
           hint: {
-            text: "This could be your company number or ACSP number"
+            text: "For late filing penalties or other penalties issued to a company, enter the company number. For individual penalties, enter your ACSP number."
           },
           id: "customer-number",
           name: "customerNumber",
@@ -111,12 +111,18 @@
 
 
 <!--- Details -->
-      {{ govukDetails({
-        summaryText: "Where can I find these details?",
-        html: '<p>Lorem ipsum.
-          If you do not have your penalty reference number, please contact Companies House.
-          If you do not have these details <a href="">contact us.</a></p>'
-      }) }} 
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Where can I find the penalty details?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    You'll find these details on the penalty notice Companies House sent to you. 
+
+    [image of letter]
+  </div>
+</details>
 
 
 
