@@ -18,10 +18,8 @@
 
       <form class="form" action="/path/of/next/page" method="post">
 
-        <h1 class="govuk-heading-xl">
-          Sanctions and powers penalty for Ashcroft Limited
-        </h1>
-
+        <span class="govuk-caption-xl">ABC LIMITED</span>
+<h1 class="govuk-heading-xl">Summary of the penalty</h1>
     </div>
   </div>
 
@@ -32,7 +30,7 @@
 
 <div class="govuk-grid-column-full-width">
     {{ govukTable({
-      caption: "Lorem ipsum",
+      caption: "Penalty information",
       captionClasses: "govuk-table__caption--m",
       firstCellIsHeader: true,
       head: [
@@ -41,28 +39,28 @@
           classes: "govuk-!-width-one-third"
         },
         {
-          text: "Penalty reference",
+          text: "Penalty reference number",
           classes: "govuk-!-width-one-quarter"
         },
         {
-          text: "Payment deadline",
+          text: "Due by",
           classes: "govuk-!-width-one-quarter"
         },
         {
-          text: "Penalty amount",
+          text: "Amount",
           classes: "govuk-!-width-one-quarter"
         }
       ],
       rows: [
         [
           {
-            text: "Sanctions"
+            text: "Late filing penalty"
           },
           {
             text: "A1234567"
           },
           {
-            text: "20 December 2023"
+            text: "30 January 2024"
           },
           {
             text: "£250"
@@ -75,7 +73,7 @@
 <!--- Button green -->
 <!-- use card number 4000056655665556 -->
         {{ govukButton({
-          text: "Continue to card payment",
+          text: "Continue to payment",
             href: "https://products.payments.service.gov.uk/pay/81dafb56e27f404e9e6ab8b318affd8a"
         }) }}
 
