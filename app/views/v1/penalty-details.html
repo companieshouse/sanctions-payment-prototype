@@ -9,6 +9,8 @@
   text: "Back",
   href: "javascript:window.history.back()"
 }) }}
+
+{% include "includes/signed-in.html" %}
 {% endblock %}
 
 {% block content %}
@@ -119,9 +121,9 @@
     </span>
   </summary>
   <div class="govuk-details__text">
-    You'll find these details on the penalty notice Companies House sent to you. 
-
-    [image of letter]
+    <p>You'll find these details on the penalty notice Companies House sent to you. 
+</p>
+  <img src='/public/images/penalty-notice-image.png' class='call-out-image' alt=''/>
   </div>
 </details>
 
