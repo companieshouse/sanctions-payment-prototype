@@ -85,7 +85,7 @@
     values: data["apply-to-you"],
     fieldset: {
       legend: {
-        text: "Do any of these apply to you?",
+        text: "Do any of these apply to the penalty you need to pay?",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--xl"
       }
@@ -96,26 +96,27 @@
     items: [
       {
         value: "multiple",
-        text: "I need to pay multiple penalties"
-      },
-      {
-        value: "instalment",
-        text: "I require an instalment plan"
+        text: "I need to pay more than one penalty"
       },
       {
         value: "partial",
-        text: "I have partially paid a penalty or am already on an instalment plan"
+        text: "I have already paid part of the penalty"
       },
       {
+        value: "instalment",
+        text: "I am on an instalment plan, or would like to set one up"
+      },
+
+      {
         value: "court",
-        text: "There are added court costs to my penalty"
+        text: "There are added court costs to the penalty"
       },
       {
         divider: "or"
       },
       {
         value: "none",
-        text: "None of the above",
+        text: "None of these",
         behaviour: "exclusive"
       }
     ]
