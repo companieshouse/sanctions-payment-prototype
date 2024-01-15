@@ -28,7 +28,7 @@ const router = govukPrototypeKit.requests.setupRouter()
     if (typeof req.session.data['applyToYou'] === 'undefined') {
       // No value so add error to array (the Error summary)
       errors.push({
-        text: 'You must select any options that apply',
+        text: 'Select which of these apply to the penalty, or select None of these',
         href: '#applyToYou'
       })
   
