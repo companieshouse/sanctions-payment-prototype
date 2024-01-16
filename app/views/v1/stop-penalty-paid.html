@@ -19,66 +19,20 @@
       <form class="form" action="/path/of/next/page" method="post">
 
         <h1 class="govuk-heading-xl">
-          The penalty A1234567 is already paid or partially paid
+          This penalty has already been paid
         </h1>
 
-<!-- Introduction and list -->
-      <p>There may be a number of reasons that you cannot use this service. </p>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>the company has no penalties</li>
-        <li>the penalty has already been paid in full</li>
-        <li>the penalty has been partially paid</li>
-        <li>the penalty has already been paid and the account is in credit</li>
-      </ul>
-
-
-<!-- Partially paid -->
-      <h2 class="govuk-heading-m">
-        If you think that you have partially paid
-      </h2>
+<!-- Penalty has been paid -->
+      <p>Penalty A123456 has been paid. </p>
 
       <p>
-        If you still want to speak to someone, 
-        <a href="#">contact the Powers and Sanctions Helpline</a>
-        if you need to speak to someone about your penalty.
-      </p>
-
-
-<!-- Paid in full -->
-      <h2 class="govuk-heading-m">
-       If you think that you have paid the penalty in full
-      </h2>
-
-      <p>
-        Check your email inbox using the penalty reference number to see if you have received a receipt.
-        These can take 24 hours to come through.
+      You do not need to do anything else.
       </p>
 
       <p>
-        If you still want to speak to someone, 
-        <a href="#">contact the Powers and Sanctions Helpline</a>
-        if you need to speak to someone about your penalty.
+        If you have any questions, you can 
+        <a href="https://www.gov.uk/contact-companies-house">contact us</a>.
       </p>
 
-
-
-
-      </form>
-
-<!-- Details -->
-      {# {{ govukDetails({
-        summaryText: "Where can I find these details?",
-        text: "Lorem ipsum.
-          The postcode will be on the address on the top right of your letter. 
-          If you do not have your penalty reference number, please contact Companies House"
-      }) }} #}
-
-      <p class="govuk-link">
-        <a href="">Is this page not working properly? (opens in a new tab)</a>
-      </p>
-
-    </div>
-  </div>
-
+      
 {% endblock %}
