@@ -19,7 +19,7 @@ router.use('/', require('./routes/v1-routes.js'))
 //      if (exports == "none"){
 //         response.redirect("/v1/sign-in")
 //     } else {
-//         response.redirect("/v1/stop-cannot-use-online-service")
+//         response.redirect("/v1/stop-you-need-to-pay-another-way")
 //     }
 // })
 

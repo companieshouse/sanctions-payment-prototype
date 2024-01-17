@@ -43,7 +43,7 @@ const router = govukPrototypeKit.requests.setupRouter()
             res.redirect('/v1/sign-in')
           } else {
             // User inputted any other value
-            res.redirect('/v1/stop-cannot-use-online-service')
+            res.redirect('/v1/stop-you-need-to-pay-another-way')
           }
     }
   })
