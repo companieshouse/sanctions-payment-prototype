@@ -88,13 +88,13 @@
 <!--- Customer number -->
         {{ govukInput({
           label: {
-            text: "What is the company or entity number?",
+            text: "What is the sanction ID code?",
             classes: "govuk-label--m",
             isPageHeading: true
           },
           classes: "govuk-input--width-10",
           hint: {
-            text: "For late filing penalties or other penalties issued to a company, enter the company number. For penalties issued to a person, enter the ACSP number."
+            text: "This starts with SID, followed by 4 numbers. For example, SID9876."
           },
           id: "customer-number",
           name: "customerNumber",
@@ -121,7 +121,7 @@
     </span>
   </summary>
   <div class="govuk-details__text">
-    <p>You'll find these details on the penalty notice Companies House sent to you. 
+    <p>You'll find these details at the bottom of the penalty notice Companies House sent to you. 
 </p>
   <img src='/public/images/penalty-notice-image.png' class='call-out-image' alt=''/>
   </div>
