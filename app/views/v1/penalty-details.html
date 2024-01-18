@@ -88,13 +88,13 @@
 <!--- Customer number -->
         {{ govukInput({
           label: {
-            text: "What is the sanction ID code?",
+            text: "What is the sanction number?",
             classes: "govuk-label--m",
             isPageHeading: true
           },
           classes: "govuk-input--width-10",
           hint: {
-            text: "This starts with SID, followed by 4 numbers. For example, SID9876."
+            text: "This starts with SAN, followed by 4 numbers. For example, SAN9876."
           },
           id: "customer-number",
           name: "customerNumber",
@@ -122,9 +122,9 @@
     </span>
   </summary>
   <div class="govuk-details__text">
-    <p>You'll find these details at the bottom of the penalty notice Companies House sent to you. 
-</p>
-  <img src='/public/images/penalty-notice-image.png' class='call-out-image' alt=''/>
+    <p>You'll find these details at the bottom of the penalty notice Companies House sent to you.</p>
+  
+    <img src='/public/images/penalty-notice-image.png' class='call-out-image' alt=''/>
   </div>
 </details>
 {# </div> #}
