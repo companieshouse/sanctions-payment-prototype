@@ -85,16 +85,16 @@
 
 
 
-<!--- Customer number -->
+<!--- Sanction ID -->
         {{ govukInput({
           label: {
-            text: "What is the sanction number?",
+            text: "What is the sanction ID?",
             classes: "govuk-label--m",
             isPageHeading: true
           },
           classes: "govuk-input--width-10",
           hint: {
-            text: "This starts with SAN, followed by 4 numbers. For example, SAN9876."
+            text: "This is 10 numbers. For example, 0123456789."
           },
           id: "customer-number",
           name: "customerNumber",
