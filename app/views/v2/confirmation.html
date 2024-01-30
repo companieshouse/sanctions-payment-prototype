@@ -1,0 +1,60 @@
+ {% extends "layouts/main.html" %} 
+
+{% block pageTitle %}
+  Question page template - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% from "govuk/components/panel/macro.njk" import govukPanel %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukPanel({
+        titleText: "Payment received",
+        html: "You do not need to do anything else <br><br> Your penalty reference number is <br><b>Y8294053</b><br><br>Your sanction ID is <br> <b>4892046381</b>"
+        
+      }) }}
+
+      <p class="govuk-body">We've emailed these details and confirmation of your payment to <strong>user@testcompany.co.uk</strong>.</p>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">
+        We will process your payment. This may take up to 24 hours.
+      </p>
+  
+      <p>
+        If you have any questions, you can 
+        <a href="https://www.gov.uk/contact-companies-house">contact us</a>.
+      </p>
+      
+
+      <h2 class="govuk-heading-m">Sign up for email reminders </h2>
+
+      <p class="govuk-body">
+        You can  <a href="#" class="govuk-link">sign up to receive email reminders</a> to file your company accounts. This will help you file on time in future and avoid late filing penalties.
+      </p>
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+      </p>
+
+        {{ govukButton({
+          text: "Print this page",
+          classes: "govuk-button--secondary govuk-!-margin-top-3",
+          href: "javascript: window.print()"
+        }) }} <!--  to developers, this is a JS-reliant button just for prototyping-->
+        <!-- the production site would need a non-JS solution OR the you could use JS to hide the button, as in people without JS would not see a button, rather than see a broken button -->
+     
+
+      <p class="govuk-body-xs govuk-!-margin-top-9">
+        <a href="email-confirmation" class="govuk-link">Confirmation email</a> 
+      </p>
+    </div>
+  </div>
+
+
+{% endblock %}

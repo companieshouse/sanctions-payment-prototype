@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/path/of/next/page" method="post">
+
+
+{{ govukInput({
+  label: {
+    text: "What is the email address you need the notification of payment sent to?",
+    classes: "govuk-label--xl",
+    isPageHeading: true
+  },
+  hint: {
+    text: "You will need to keep the notification of payment for your records."
+  },
+  classes: "govuk-!-width-one-half",
+  id: "email",
+  name: "email"
+}) }}
+
+{{ govukButton({
+  text: "Continue",
+  href: "email-address-correct"
+}) }}
+
+      </form>
+
+<p class="govuk-link">
+  <a href="">Is this page not working properly? (opens in a new tab)</a>
+</p>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,137 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Do any of these apply to you? - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+     <!-- Check for error -->
+      {% if errorApplyToYou %}
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: errorList
+        }) }}
+      {% endif %}
+
+
+
+      <form action="{{currentUrl}}" method="post">
+
+
+<!-- Check for error -->
+        {% if errorApplyToYou %}
+<!-- Error Heading and checkboxes -->
+  {{ govukCheckboxes({
+    name: "applyToYou",
+    values: data["apply-to-you"],
+    fieldset: {
+      legend: {
+        text: "Do any of these apply to the penalty you need to pay?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--xl"
+      }
+    },
+    hint: {
+      text: "Select all that apply"
+    },
+  errorMessage: {
+    text: "Select which of these apply to the penalty, or select 'None of these'"
+  },
+    items: [
+      {
+        value: "multiple",
+        text: "I have more than one penalty to pay"
+      },
+      {
+        value: "partial",
+        text: "I have already paid part of the penalty"
+      },
+      {
+        value: "instalment",
+        text: "I'm on an instalment plan, or would like to set one up"
+      },
+      {
+        value: "court",
+        text: "There are added court costs to the penalty"
+      },
+      {
+        divider: "or"
+      },
+      {
+        value: "none",
+        text: "None of these",
+        behaviour: "exclusive"
+      }
+    ]
+  }) }}
+        {% else %}
+    
+
+<!-- Heading and checkboxes -->
+  {{ govukCheckboxes({
+    name: "applyToYou",
+    values: data["apply-to-you"],
+    fieldset: {
+      legend: {
+        text: "Do any of these apply to the penalty you need to pay?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--xl"
+      }
+    },
+    hint: {
+      text: "Select all that apply"
+    },
+    items: [
+      {
+        value: "multiple",
+        text: "I have more than one penalty to pay"
+      },
+      {
+        value: "partial",
+        text: "I have already paid part of the penalty"
+      },
+      {
+        value: "instalment",
+        text: "I'm on an instalment plan, or would like to set one up"
+      },
+
+      {
+        value: "court",
+        text: "There are added court costs to the penalty"
+      },
+      {
+        divider: "or"
+      },
+      {
+        value: "none",
+        text: "None of these",
+        behaviour: "exclusive"
+      }
+    ]
+  }) }}
+    {% endif %} 
+    
+
+<!-- button-->
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

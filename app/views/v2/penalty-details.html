@@ -1,0 +1,148 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Penalty details - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+
+{% include "includes/signed-in.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+     {# <!-- Check for error -->
+      {% if errorPenaltyReference == true or errorCustomerNumber == true %}
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: errorList
+        }) }}
+      {% endif %} #}
+
+
+      <form action="{{currentUrl}}" method="post">
+
+        <h1 class="govuk-heading-xl">
+          Penalty details
+        </h1>
+
+
+<!--- Inset text - multiple penalties are on hold -->
+     {# {{ govukInsetText({
+        text: "You can add more penalties later in the journey"
+      }) }}  #}
+
+
+
+
+{# <!-- Check for error -->
+        {% if errorPenaltyReference %}
+<!--- ERROR Penalty reference -->
+        {{ govukInput({
+          label: {
+            text: "What is the penalty reference number?",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          classes: "govuk-input--width-10",
+          hint: {
+            text: "This starts with a letter, followed by 7 numbers. For example, A1234567."
+          },
+            errorMessage: {
+              text: "Enter a penalty reference number"
+            },
+          id: "penalty-reference",
+          name: "penaltyReference",
+          values: data["penalty-reference"]
+        }) }}
+        {% else %} #}
+
+<!--- Penalty reference -->
+        {{ govukInput({
+          label: {
+            text: "What is the penalty reference number?",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          classes: "govuk-input--width-10",
+          hint: {
+            text: "This starts with a letter, followed by 7 numbers. For example, A1234567."
+          },
+          id: "penalty-reference",
+          name: "penaltyReference",
+          values: data["penalty-reference"]
+        }) }}
+{# {% endif %}  #}
+
+
+
+
+
+<!--- Sanction ID -->
+        {{ govukInput({
+          label: {
+            text: "What is the sanction ID?",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          classes: "govuk-input--width-10",
+          hint: {
+            text: "This is 10 numbers. For example, 0123456789."
+          },
+          id: "customer-number",
+          name: "customerNumber",
+          values: data["customer-number"]
+        }) }}
+
+
+
+<!--- Button -->
+        {{ govukButton({
+          text: "Continue",
+          href: "penalty-summary"
+        }) }}
+
+      </form>
+
+
+
+<!--- Details -->
+{# <div class="govuk-!-margin-bottom-9"> #}
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Where can I find the penalty details?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p>You'll find these details at the bottom of the penalty notice Companies House sent to you.</p>
+  
+    <img src='/public/images/penalty-notice-image.png' class='call-out-image' alt=''/>
+  </div>
+</details>
+{# </div> #}
+
+
+
+<!-- Links for testing-->
+{# <div class="govuk-button-group">
+<div class="govuk-!-margin-top-9">
+      <p class="govuk-body-xs"> Stop screens: <br>
+        <a href="stop-this-penalty-has-already-been-paid" class="govuk-link--no-visited-state">This penalty has already been paid</a><br>
+        <a href="stop-sorry-there-is-a-problem-with-this-service" class="govuk-link--no-visited-state">Sorry, there is a problem with the service</a><br>
+        <a href="stop-you-need-to-pay-another-way" class="govuk-link--no-visited-state">Stop screen: You need to pay another way</a>
+      </p>
+      </div>  
+      </div> #}
+
+    </div>
+  </div>
+
+{% endblock %}

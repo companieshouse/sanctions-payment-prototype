@@ -1,0 +1,38 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/path/of/next/page" method="post">
+
+        <h1 class="govuk-heading-xl">
+          This penalty has already been paid
+        </h1>
+
+<!-- Penalty has been paid -->
+      <p>Penalty <strong>Y8294053</strong> has been paid. </p>
+
+      <p>
+      You do not need to do anything else.
+      </p>
+
+      <p>
+        If you have any questions, you can 
+        <a href="https://www.gov.uk/contact-companies-house">contact us</a>.
+      </p>
+
+      
+{% endblock %}

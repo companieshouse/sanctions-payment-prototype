@@ -1,0 +1,124 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/path/of/next/page" method="post">
+
+        <h1 class="govuk-heading-xl">
+          Sanctions and powers penalty for STARDUST LIMITED
+        </h1>
+    </div>
+
+<div class="govuk-grid-column-full-width">
+
+<!--- Penalty table -->
+
+
+    {{ govukTable({
+      caption: "Lorem ipsum",
+      captionClasses: "govuk-table__caption--m",
+      firstCellIsHeader: true,
+      head: [
+        {
+          text: "Type of penalty",
+          classes: "govuk-!-width-one-quarter"
+        },
+        {
+          text: "Penalty reference",
+          classes: "govuk-!-width-one-quarter"
+        },
+        {
+          text: "Payment deadline",
+          classes: "govuk-!-width-one-quarter"
+        },
+        {
+          text: "Amount",
+          classes: "govuk-!-width-one-fifth"
+        },
+        {
+          text: " ",
+          classes: "govuk-!-width-one-fifth"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "Minor offence - first penalty"
+          },
+          {
+            text: "A1234567"
+          },
+          {
+            text: "20 December 2023"
+          },
+          {
+            text: "£250"
+          },
+          {
+            html: '<p class="govuk-body govuk-link"><a href="">Remove and pay later</a></p>'
+
+          }
+        ],
+                [
+          {
+            text: "Minor offence - first penalty"
+          },
+          {
+            text: "A1234567"
+          },
+          {
+            text: "20 December 2023"
+          },
+          {
+            text: "£250"
+          },
+          {
+            html: '<p class="govuk-body govuk-link"><a href="">Remove and pay later</a></p>'
+          }
+        ]
+      ]
+    }) }}
+
+
+<!--- Button green -->
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue to card payment",
+            href: "card-payment"
+        }) }}
+
+<!--- Button grey -->
+        {{ govukButton({
+          text: "Add another penalty",
+          classes: "govuk-button--secondary",
+            href: "penalty-details"
+        }) }}
+      </div>
+
+  </form>
+
+
+
+<!--- Link -->
+      <p class="govuk-link">
+        <a href="">Is this page not working properly? (opens in a new tab)</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}
