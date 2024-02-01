@@ -4,8 +4,12 @@
   Question page template - {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-
 {% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block beforeContent %}
+{% include "includes/banner.html" %}
+{% include "includes/signed-in.html" %}
+{% endblock %}
 
 {% from "govuk/components/panel/macro.njk" import govukPanel %}
 
