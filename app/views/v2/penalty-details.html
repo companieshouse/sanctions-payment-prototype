@@ -101,7 +101,10 @@
           values: data["customer-number"]
         }) }}
 
-<p>We will check that these 2 pieces of information match, to make sure we link your payment to the correct penalty.</p>
+        {{ govukInsetText({
+          text: "We will check that these 2 pieces of information match, to make sure we link your payment to the correct penalty."
+        }) }}
+
 
 <!--- Button -->
         {{ govukButton({
