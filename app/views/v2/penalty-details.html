@@ -34,11 +34,32 @@
         </h1>
 
 
+
+        {{ govukInsetText({
+          text: "We use 2 reference numbers to identify a penalty, to help keep your information secure."
+        }) }}
+
+<!--- Details -->
+{# <div class="govuk-!-margin-bottom-9"> #}
+  <details class="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Where to find the penalty details
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      <p>You'll find these numbers at the top of the penalty notice we sent to you.</p>
+    
+      <img src='/public/images/penalty-notice-image.png' class='call-out-image' alt=''/>
+    </div>
+  </details>
+  {# </div> #}
+
+
 <!--- Inset text - multiple penalties are on hold -->
      {# {{ govukInsetText({
         text: "You can add more penalties later in the journey"
       }) }}  #}
-
 
 
 
@@ -101,26 +122,10 @@
           values: data["customer-number"]
         }) }}
 
-        {{ govukInsetText({
-          text: "We use 2 reference numbers to identify a penalty, to help keep your information secure."
-        }) }}
+       
 
 
-<!--- Details -->
-{# <div class="govuk-!-margin-bottom-9"> #}
-  <details class="govuk-details">
-    <summary class="govuk-details__summary">
-      <span class="govuk-details__summary-text">
-        Where to find the penalty details
-      </span>
-    </summary>
-    <div class="govuk-details__text">
-      <p>You'll find these numbers at the top of the penalty notice we sent to you.</p>
-    
-      <img src='/public/images/penalty-notice-image.png' class='call-out-image' alt=''/>
-    </div>
-  </details>
-  {# </div> #}
+
 
 <!--- Button -->
         {{ govukButton({
