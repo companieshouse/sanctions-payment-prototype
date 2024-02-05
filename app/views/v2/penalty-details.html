@@ -102,9 +102,25 @@
         }) }}
 
         {{ govukInsetText({
-          text: "We will check that these 2 pieces of information match, to make sure we link your payment to the correct penalty."
+          text: "We use 2 numbers to identify a penalty, to help keep your information secure."
         }) }}
 
+
+<!--- Details -->
+{# <div class="govuk-!-margin-bottom-9"> #}
+  <details class="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Where can I find the penalty details?
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      <p>You'll find these numbers at the top of the penalty notice we sent to you.</p>
+    
+      <img src='/public/images/penalty-notice-image.png' class='call-out-image' alt=''/>
+    </div>
+  </details>
+  {# </div> #}
 
 <!--- Button -->
         {{ govukButton({
@@ -116,21 +132,7 @@
 
 
 
-<!--- Details -->
-{# <div class="govuk-!-margin-bottom-9"> #}
-<details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Where can I find the penalty details?
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    <p>You'll find these numbers at the top of the penalty notice Companies House sent to you.</p>
-  
-    <img src='/public/images/penalty-notice-image.png' class='call-out-image' alt=''/>
-  </div>
-</details>
-{# </div> #}
+
 
 
 
