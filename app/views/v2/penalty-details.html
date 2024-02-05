@@ -29,18 +29,18 @@
 
       <form action="{{currentUrl}}" method="post">
 
-        <h1 class="govuk-heading-xl">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
           Penalty details
         </h1>
+        <p class="govuk-hint govuk-">We use 2 reference numbers to identify a penalty, to help keep your information secure.</p>
 
-
-
+{# 
         {{ govukInsetText({
           text: "We use 2 reference numbers to identify a penalty, to help keep your information secure."
-        }) }}
+        }) }} #}
 
 <!--- Details -->
-{# <div class="govuk-!-margin-bottom-9"> #}
+<div class="govuk-!-margin-top-6"> 
   <details class="govuk-details">
     <summary class="govuk-details__summary">
       <span class="govuk-details__summary-text">
@@ -50,10 +50,10 @@
     <div class="govuk-details__text">
       <p>You'll find these numbers at the top of the penalty notice we sent to you.</p>
     
-      <img src='/public/images/penalty-notice-image.png' class='call-out-image' alt=''/>
+      <img src='/public/images/roe-penalty-notice.png' class='call-out-image' alt=''/>
     </div>
   </details>
-  {# </div> #}
+  </div> 
 
 
 <!--- Inset text - multiple penalties are on hold -->
