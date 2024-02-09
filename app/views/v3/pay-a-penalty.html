@@ -1,0 +1,165 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pay a penalty - {{ serviceName }} - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/banner.html" %}
+
+<!-- Breadcrumbs -->
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#"
+      },
+      {
+        text: "Section",
+        href: "#"
+      },
+      {
+        text: "Subsection"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+<!-- Heading -->
+      <h1 class="govuk-heading-xl">
+        Pay a penalty to Companies House
+      </h1>
+
+<!-- Intro -->
+      <p class="govuk-body">Use this service to make an online payment if you’ve received a penalty notice from Companies House.</p>
+
+<!-- You'll need -->
+<p>You'll need:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>to sign in to or create a Companies House account</li>
+        <li>a credit or debit card</li>        
+        <li>the reference numbers from your penalty notice</li></ul>
+
+<!-- Where to find your reference numbers -->
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Where to find the reference numbers
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>You'll need 2 reference numbers. They are both at the top of the penalty notice we sent to you.</p>
+        
+          <img src='/public/images/roe-penalty-notice.png' class='call-out-image' alt=''/>
+
+          <br><br><p>The first number is the penalty reference number. This starts with a letter, followed by 7 numbers. For example, A1234567.</p>
+
+          <p>The second number depends on what type of penalty you are paying. It will be one of the following:
+            <ul class="govuk-list govuk-list--bullet">
+              <li>case ID</li>
+              <li>sanction ID</li>
+              <li>company number</li>
+            
+
+          
+        </div>
+      </details>
+
+
+
+
+
+      <p class="govuk-body">It usually takes around 5 minutes to pay.</p>
+
+
+
+<!-- Start button -->
+<a href="which-penalty-service" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+  Start now
+  <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+    <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+  </svg></a>
+
+
+
+
+
+<!-- Other ways to pay -->
+<h2 class="govuk-heading-m">Other ways to pay</h2>
+
+    <p>
+      You can also pay by:
+     </p>
+ 
+     <ul class="govuk-list govuk-list--bullet">
+       <li>bank transfer</li>
+       <li>cheque (late filing penalties only)</li>
+     </ul>
+
+  
+    <!-- Bacs -->
+    <h3 class="govuk-heading-s">Pay by bank transfer</h3>
+
+    <p>
+     You can pay using Bacs payment. You'll need to use the account details shown on your penalty notice.
+    </p>
+
+    <p>
+     It usually takes up to 3 working days for your payment to reach Companies House. Check your bank's transaction limits and processing times before making a payment.
+    </p>
+
+
+
+
+<!-- Cheque -->
+   <h3 class="govuk-heading-s">Pay by cheque (late filing penalties only)</h3>
+
+   <p>You can pay a late filing penalty by cheque, through the post. Make the cheque payable to ‘Companies House only’ and send it along with the slip on the penalty notice (‘remittance advice’) to Companies House.
+   </p>
+
+   <div class="govuk-inset-text">
+     Companies House
+     <br>PO Box 710
+     <br>Crown Way
+     <br>CF14 3UZ
+   </div>
+
+   <p>Write the company name and number on the back of the cheque. You’ll find the company number on your penalty notice.
+   </p>
+
+
+   <!-- Appeal a penalty -->
+<h2 class="govuk-heading-m">Appeal a penalty</h2>
+<p>You can <a href="https://www.gov.uk/appeal-a-penalty-for-filing-your-company-accounts-late" class="govuk-link">appeal a late filing penalty</a> through Companies House, but it will only be successful if you can show that the reasons are exceptional.</p>
+<p>Other penalties can only be appealed through the courts.  <a href="#" class="govuk-link">You need to tell us if you have appealed to the courts</a>.</p>
+  </div>
+</details>
+
+
+
+
+
+
+
+<!--- Details -->
+      {# {{ govukDetails({
+        summaryText: "Help with nationality",
+        text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
+      }) }} #}
+
+    </div>
+  </div>
+
+{% endblock %}
