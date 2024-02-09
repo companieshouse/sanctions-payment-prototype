@@ -10,9 +10,9 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 
   // ******* filter-question ********************************
-  router.get('/v2/filter-question', function (req, res) {
+  router.get('/v3/filter-question', function (req, res) {
     // Set URl
-    res.render('v2/filter-question', {
+    res.render('v3/filter-question', {
       currentUrl: req.originalUrl
     })
   })
@@ -20,7 +20,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 
   // ******* ERROR filter-question ********************************
-  router.post('/v2/filter-question', function (req, res) {
+  router.post('/v3/filter-question', function (req, res) {
     // Create empty array
     var errors = []
   
@@ -33,17 +33,17 @@ const router = govukPrototypeKit.requests.setupRouter()
       })
   
       // Re-show page with error value as true so errors will show
-      res.render('v2/filter-question', {
+      res.render('v3/filter-question', {
         errorApplyToYou: true,
         errorList: errors
       })
     } else {
           // User inputted a specific value, in this case 'none'
           if (req.session.data['applyToYou'] == 'none') {   // this was === which doesn't work, changing to == seems to work?!
-            res.redirect('/v2/sign-in')
+            res.redirect('/v3/sign-in')
           } else {
             // User inputted any other value
-            res.redirect('/v2/stop-you-need-to-pay-another-way')
+            res.redirect('/v3/stop-you-need-to-pay-another-way')
           }
     }
   })
@@ -51,7 +51,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 
     // // ******* ERROR penalty details ********************************
-    // router.post('/v2/penalty-details', function (req, res) {
+    // router.post('/v3/penalty-details', function (req, res) {
     //   // Create empty array
     //   var errors = []
     
@@ -64,13 +64,13 @@ const router = govukPrototypeKit.requests.setupRouter()
     //     })
     
     //     // Re-show page with error value as true so errors will show
-    //     res.render('v2/penalty-details', {
+    //     res.render('v3/penalty-details', {
     //       errorPenaltyReference: true,
     //       errorList: errors
     //     })           
     //   } else {
     //       // If selected goes to next page
-    //       res.redirect('/v2/penalty-summary')
+    //       res.redirect('/v3/penalty-summary')
     //     }           
     //   })
   
