@@ -20,28 +20,84 @@
       <form class="form" action="/path/of/next/page" method="post">
 
         <h1 class="govuk-heading-xl">
-          You need to pay another way
+          You need to pay by bank transfer
         </h1>
 
-<!-- Introduction and list -->
-      <p>
-       You cannot use this online service if you:
-      </p>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>have already paid part of the penalty</li>
-        <li>are on an instalment plan, or would like to set one up</li>
-        <li>have additional court costs to pay</li>
-      </ul>
 
 
-      <p>
-        If you have any questions, you can 
-        <a href="https://www.gov.uk/contact-companies-house">contact us</a>.
+      <p>You cannot use this online service to pay this penalty. </p>
+
+      <h3 class="govuk-heading-s">Pay by Bacs</h3>
+
+        <p>
+          Use these account details to pay by Bacs. They may be different from other transactions you have made with Companies House.
+         </p>
+     
+         <ul class="govuk-list govuk-list--bullet">
+          <li>Sort code - 60 70 80</li>
+          <li>Account number - 10033599</li>
+          <li>Account name - COMPANIES HOUSE</li></ul>
         
-      </p>
+          <p>Quote the penalty reference number in the transaction reference, so that we know which penalty you are paying. </p>
+        
+     
+     <!-- Overseas account -->
+     <div class="govuk-!-margin-top-6"> 
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Pay from an overseas account
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>Use these account details to pay from an overseas account. They may be different from other transactions you have made with Companies House.</p>
 
-<!-- Another way -->
+     
+         <ul class="govuk-list govuk-list--bullet">
+          <li>Account number (IBAN) - GB24NWBK60708010033599</li>
+          <li>Swift code -  NW BK GB 2L</li>
+          <li>Account name - COMPANIES HOUSE</li></ul>
+
+          <p>Quote the penalty reference number in the transaction reference, so that we know which penalty you are paying. </p>
+
+          <p>
+            Email the Powers and Sanctions finance team at Companies House to tell them you’ve paid. Include in your email the:
+           </p>
+       
+           <ul class="govuk-list govuk-list--bullet">
+            <li>company number</li>
+            <li>company name</li>
+            <li>penalty reference number</li>
+            <li>amount paid</li>
+            <li>date paid</li>
+          </ul>
+       
+       
+          <div class="govuk-inset-text">
+            Powers and Sanctions finance team
+            <br>Companies House
+            <br><a href="#">psfinance@companieshouse.gov.uk</a>
+          </div>
+        </div>
+      </details>
+      </div> 
+
+
+     
+
+          
+      
+          <h3 class="govuk-heading-s">What happens next</h3>
+
+       <p>
+        Once we receive your payment, your account will be updated within 48 hours. </p>
+
+        <p>
+          If you have any questions, you can 
+          <a href="https://www.gov.uk/contact-companies-house">contact us</a>.
+          
+        </p>
+<!-- Another way 
       <h2 class="govuk-heading-m">
        Other ways to pay
       </h2>
@@ -56,7 +112,7 @@
        </ul>
   
     
-      <!-- Bacs -->
+      <!-- Bacs
       <h3 class="govuk-heading-s">Pay by bank transfer</h3>
   
       <p>
@@ -68,7 +124,7 @@
       </p>
   
   
-  <!-- Cheque -->
+  <!-- Cheque
      <h3 class="govuk-heading-s">Pay by cheque (late filing penalties only)</h3>
   
      <p>You can pay a late filing penalty by cheque, through the post. Make the cheque payable to ‘Companies House only’ and send it along with the slip on the penalty notice (‘remittance advice’) to Companies House.
@@ -82,8 +138,9 @@
      </div>
   
      <p>Write the company name and number on the back of the cheque. You’ll find the company number on your penalty notice.
-     </p>
+     </p>-->
     </div>
 
+    
 
 {% endblock %}

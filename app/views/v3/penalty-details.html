@@ -32,13 +32,82 @@
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
           Penalty details
         </h1>
-        <p class="govuk-hint govuk-">We use 2 reference numbers to identify a penalty, to help keep your information secure.</p>
+        <!--<p class="govuk-hint govuk-">We use 2 reference numbers to identify a penalty, to help keep your information secure.</p>
 
 {# 
         {{ govukInsetText({
           text: "We use 2 reference numbers to identify a penalty, to help keep your information secure."
-        }) }} #}
+        }) }} #}-->
 
+
+
+
+<!--- Inset text - multiple penalties are on hold -->
+     {# {{ govukInsetText({
+        text: "You can add more penalties later in the journey"
+      }) }}  #}
+
+
+
+<!--- Company number -->
+        {{ govukInput({
+          label: {
+            text: "What is the company number?",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          classes: "govuk-input--width-10",
+          hint: {
+            text: "This is 8 characters. For example, 12345678 or AB123456."
+          },
+          id: "customer-number",
+          name: "customerNumber",
+          values: data["customer-number"]
+        }) }}
+
+
+
+        {# <!-- Check for error -->
+          {% if errorPenaltyReference %}
+  <!--- ERROR Penalty reference -->
+          {{ govukInput({
+            label: {
+              text: "What is the penalty reference?",
+              classes: "govuk-label--m",
+              isPageHeading: true
+            },
+            classes: "govuk-input--width-10",
+            hint: {
+              text: "This starts with a letter, followed by 7 numbers. For example, A1234567."
+            },
+              errorMessage: {
+                text: "Enter a penalty reference"
+              },
+            id: "penalty-reference",
+            name: "penaltyReference",
+            values: data["penalty-reference"]
+          }) }}
+          {% else %} #}
+  
+  <!--- Penalty reference -->
+          {{ govukInput({
+            label: {
+              text: "What is the penalty reference?",
+              classes: "govuk-label--m",
+              isPageHeading: true
+            },
+            classes: "govuk-input--width-10",
+            hint: {
+              text: "This starts with a letter, followed by 7 numbers. For example, A1234567."
+            },
+            id: "penalty-reference",
+            name: "penaltyReference",
+            values: data["penalty-reference"]
+          }) }}
+  {# {% endif %}  #}
+
+
+        
 <!--- Details -->
 <div class="govuk-!-margin-top-6"> 
   <details class="govuk-details">
@@ -53,76 +122,7 @@
       <img src='/public/images/roe-penalty-notice.png' class='call-out-image' alt=''/>
     </div>
   </details>
-  </div> 
-
-
-<!--- Inset text - multiple penalties are on hold -->
-     {# {{ govukInsetText({
-        text: "You can add more penalties later in the journey"
-      }) }}  #}
-
-
-
-{# <!-- Check for error -->
-        {% if errorPenaltyReference %}
-<!--- ERROR Penalty reference -->
-        {{ govukInput({
-          label: {
-            text: "What is the penalty reference number?",
-            classes: "govuk-label--m",
-            isPageHeading: true
-          },
-          classes: "govuk-input--width-10",
-          hint: {
-            text: "This starts with a letter, followed by 7 numbers. For example, A1234567."
-          },
-            errorMessage: {
-              text: "Enter a penalty reference number"
-            },
-          id: "penalty-reference",
-          name: "penaltyReference",
-          values: data["penalty-reference"]
-        }) }}
-        {% else %} #}
-
-<!--- Penalty reference -->
-        {{ govukInput({
-          label: {
-            text: "What is the penalty reference number?",
-            classes: "govuk-label--m",
-            isPageHeading: true
-          },
-          classes: "govuk-input--width-10",
-          hint: {
-            text: "This starts with a letter, followed by 7 numbers. For example, A1234567."
-          },
-          id: "penalty-reference",
-          name: "penaltyReference",
-          values: data["penalty-reference"]
-        }) }}
-{# {% endif %}  #}
-
-
-
-
-
-<!--- Sanction ID -->
-        {{ govukInput({
-          label: {
-            text: "What is the sanction ID?",
-            classes: "govuk-label--m",
-            isPageHeading: true
-          },
-          classes: "govuk-input--width-10",
-          hint: {
-            text: "This is 10 numbers. For example, 0123456789."
-          },
-          id: "customer-number",
-          name: "customerNumber",
-          values: data["customer-number"]
-        }) }}
-
-       
+  </div>        
 
 
 
