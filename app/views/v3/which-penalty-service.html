@@ -22,31 +22,45 @@
 
 
 <!-- Heading and radio buttons -->
-{{ govukRadios({
-  name: "penaltyType",
-  value: data['penalty-type'],
-  fieldset: {
-    legend: {
-      text: "What type of penalty do you need to pay?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--xl"
-    }
-  },
-  items: [
-    {
-      value: "lfp",
-      text: "Late filing penalty (for late filing of accounts)"
-    },
-    {
-      value: "roe",
-      text: "Register of Overseas Entities penalty"
-    },
-    {
-      value: "sanctions",
-      text: "Another type of penalty"
-    }
-  ]
-}) }}
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        What type of penalty do you need to pay?
+      </h1>
+    </legend>
+ 
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway" aria-describedby="signIn-item-hint">
+        <label class="govuk-label govuk-radios__label" for="signIn">
+          Late filing penalty
+        </label>
+        <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+          The penalty reference starts with A. For example, A1234567
+        </div>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login" aria-describedby="signIn-2-item-hint">
+        <label class="govuk-label govuk-radios__label" for="signIn-2">
+          Register of Overseas Entities penalty
+        </label>
+        <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
+          The penalty reference starts with U or Z. For example, U1234567 or Z1234567
+        </div>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login" aria-describedby="signIn-2-item-hint">
+        <label class="govuk-label govuk-radios__label" for="signIn-2">
+          Another type of penalty
+        </label>
+        <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
+          The penalty reference starts with X or Y. For example, X1234567 or Y1234567
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
 
 
 <!-- Button -->
