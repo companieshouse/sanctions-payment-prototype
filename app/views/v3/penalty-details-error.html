@@ -18,13 +18,17 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-     {# <!-- Check for error -->
-      {% if errorPenaltyReference == true or errorCustomerNumber == true %}
-        {{ govukErrorSummary({
-          titleText: "There is a problem",
-          errorList: errorList
-        }) }}
-      {% endif %} #}
+{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "You've entered incorrect penalty details. Enter the correct company number and penalty reference.",
+      href: "#customer-number"
+    }
+  ]
+}) }}
 
 
       <form action="{{currentUrl}}" method="post">
@@ -59,36 +63,15 @@
           classes: "govuk-input--width-10",
           hint: {
             text: "This is 8 characters. For example, 12345678 or AB123456."
-          },
-          id: "customer-number",
-          name: "customerNumber",
-          values: data["customer-number"]
+  },
+  errorMessage: {
+    text: "Enter the correct company number"
+  },
+          id: "company-number",
+          name: "companyNumber",
+          value: data["company-number-value-wrong"]
         }) }}
 
-
-
-        {# <!-- Check for error -->
-          {% if errorPenaltyReference %}
-  <!--- ERROR Penalty reference -->
-          {{ govukInput({
-            label: {
-              text: "What is the penalty reference?",
-              classes: "govuk-label--m",
-              isPageHeading: true
-            },
-            classes: "govuk-input--width-10",
-            hint: {
-              text: "This starts with a Y, followed by 7 numbers. For example, Y1234567."
-            },
-              errorMessage: {
-                text: "Enter a penalty reference"
-              },
-            id: "penalty-reference",
-            name: "penaltyReference",
-            values: data["penalty-reference"]
-          }) }}
-          {% else %} #}
-  
   <!--- Penalty reference -->
           {{ govukInput({
             label: {
@@ -100,9 +83,12 @@
             hint: {
               text: "This starts with a Y, followed by 7 numbers. For example, Y1234567."
             },
+            errorMessage: {
+              text: "Enter the correct penalty reference"
+            },
             id: "penalty-reference",
             name: "penaltyReference",
-            values: data["penalty-reference"]
+            value: data["penalty-reference-number"]
           }) }}
   {# {% endif %}  #}
 
@@ -130,7 +116,7 @@
 <!--- Button -->
         {{ govukButton({
           text: "Continue",
-          href: "penalty-details-error"
+          href: "stop-you-need-to-pay-another-way"
         }) }}
 
       </form>
