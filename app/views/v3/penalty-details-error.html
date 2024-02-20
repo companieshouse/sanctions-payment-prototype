@@ -24,7 +24,7 @@
   titleText: "There is a problem",
   errorList: [
     {
-      text: "You've entered incorrect penalty details. Enter the correct company number and penalty reference.",
+      text: "These penalty details do not match. Enter the company number and penalty reference exactly as they are shown on your penalty notice.",
       href: "#customer-number"
     }
   ]
@@ -36,6 +36,9 @@
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
           Penalty details
         </h1>
+        <p id="address-line-1-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> 
+These penalty details do not match. Enter the company number and penalty reference exactly as they are shown on your penalty notice.    </p>
         <!--<p class="govuk-hint govuk-">We use 2 reference numbers to identify a penalty, to help keep your information secure.</p>
 
 {# 
@@ -65,7 +68,7 @@
             text: "This is 8 characters. For example, 12345678 or AB123456."
   },
   errorMessage: {
-    text: "Enter the correct company number"
+    text: ""
   },
           id: "company-number",
           name: "companyNumber",
@@ -84,13 +87,15 @@
               text: "This starts with a Y, followed by 7 numbers. For example, Y1234567."
             },
             errorMessage: {
-              text: "Enter the correct penalty reference"
+              text: ""
             },
             id: "penalty-reference",
             name: "penaltyReference",
             value: data["penalty-reference-number"]
           }) }}
   {# {% endif %}  #}
+
+
 
 
         
@@ -109,6 +114,8 @@
     </div>
   </details>
   </div>        
+
+
 
 
 
