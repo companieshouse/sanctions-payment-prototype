@@ -18,14 +18,20 @@
     <div class="govuk-grid-column-two-thirds">
       {{ govukPanel({
         titleText: "You have paid this penalty",
-        html: " Amount paid: <b>£250</b>
-        <br>
-        <br>
-               Payment received for penalty reference: <b>Y8294053</b>"
-        
+        html: "Payment received for penalty reference: <b>Y8294053</b>"
       }) }}
 
-      <p class="govuk-body">We've emailed these details to <strong>user@testcompany.co.uk</strong>. You'll also receive an email from GOV.UK Pay confirming that your payment was successful. These emails are your receipt of payment. </p>
+
+
+      <p class="govuk-body">
+        You have paid <b>£250</b> for a penalty issued to STARDUST LIMITED (28502425).
+      </p>
+
+      <p class="govuk-body">
+        We've emailed these details to <strong>user@testcompany.co.uk</strong>. 
+        You'll also receive an email from GOV.UK Pay confirming that your payment was successful. 
+        These emails are your receipt of payment.
+      </p>
 
 
 <!-- What happens next -->
@@ -44,11 +50,16 @@
       <h2 class="govuk-heading-m">Check if further action is needed</h2>
 
       <p class="govuk-body">
-        You have paid your penalty, but you may need to take further action to address the reason it was issued. This is required by law, and is the responsibility of the company or person who the penalty was issued to.
-        <br><br>
-        We may issue further penalties or prosecute if you do not take action.
-        
+        You have paid your penalty, but you may need to take further action to address the reason it was issued. 
+        This is required by law, and is the responsibility of the company or person who the penalty was issued to.
       </p>
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          We may issue further penalties or prosecute if you do not take action.
+        </strong>
+      </div>
 </div>
 
 

@@ -27,57 +27,53 @@
 
 
 
-<!--- Penalty table -->
+<!--- Penalty summary list -->
 
-
-<div class="govuk-grid-column-full-width">
-    {{ govukTable({
-      firstCellIsHeader: true,
-      head: [
-        {
-          text: "Type of penalty",
-          classes: "govuk-!-width-one-fifth"
-        },
-        
-        {
-          text: "Penalty reference",
-          classes: "govuk-!-width-one-fifth"
-        },
-        {
-          text: "Due by",
-          classes: "govuk-!-width-one-fifth"
-        },
-        {
-          text: "Amount",
-          classes: "govuk-!-width-one-fifth"
-        },
-        {
-          text: "Interest of 8%",
-          classes: "govuk-!-width-one-fifth"
-        }
-      ],
-      rows: [
-        [
+    {{ govukSummaryList({
+        classes: "govuk-!-margin-bottom-9",
+        rows: [
           {
-            text: "Failure to provide an appropriate registered email address"
-          },
-          
-          {
-            text: "Y8294053
-            "
+            key: {
+              text: "Type of penalty"
+            },
+            value: {
+              text: "Failure to provide an appropriate registered email address"
+            }
           },
           {
-            text: "14 March 2024"
+            key: {
+              text: "Penalty reference"
+            },
+            value: {
+              text: "Y8294053"
+            }
           },
           {
-            text: "£250"
+            key: {
+              text: "Due by"
+            },
+            value: {
+              text: "14 March 2024"
+            }
           },
           {
-            text: "£27.27"
+            key: {
+              text: "Amount"
+            },
+            value: {
+              html: "£250"
+            }
+          },
+          {
+            key: {
+              text: "Interest at 8%"
+            },
+            value: {
+              html: '£28.50'
+            }
           }
         ]
-      ]
-    }) }}
+      }) }}
 
 <p class ="govuk-body-l"><strong>Total: £XX </strong></p>
 
@@ -87,6 +83,10 @@
           text: "Continue to payment",
             href: "https://products.payments.service.gov.uk/pay/81dafb56e27f404e9e6ab8b318affd8a"
         }) }}
+
+<p class="govuk-body"> <a href="penalty-details">I want to change the penalty details</a></p>
+
+
 
 <p class="govuk-body-xs govuk-!-margin-top-9"> <a href="confirmation">Skip to confirmation</a></p>
   </form>
