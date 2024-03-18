@@ -1,0 +1,71 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/banner.html" %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% include "includes/signed-in.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="/path/of/next/page" method="post">
+
+      <h1 class="govuk-heading-xl">
+       Pay by bank transfer (Bacs)
+      </h1>
+
+
+      <p>
+        Use these account details to pay this penalty by bank transfer (Bacs). 
+       </p>
+   
+       <ul class="govuk-list govuk-list--bullet">
+        <li>Account name: Companies House</li>
+        <li>Sort code: 60 70 80</li>
+        <li>Account number: 10033599</li>
+        <li>Payment reference: Use your company number and penalty reference, so that we know which penalty you've paid </li></ul>
+      
+        <div class="govuk-inset-text">
+          Check these details carefully. They may differ from other transactions you've made with us, as this is a dedicated account for paying this type of penalty.​
+        </div>
+      
+   
+   <!-- Overseas account -->
+   <h3 class="govuk-heading-s">For overseas payments</h3>
+   <ul class="govuk-list govuk-list--bullet">
+    <li>IBAN: GB24NWBK60708010033599</li>
+    <li>SWIFT code (BIC): NW BK GB 2L</li>
+    <li>Payment reference: Use your company number and penalty reference, so that we know which penalty you've paid </li></ul>
+  
+
+        
+    
+        <h3 class="govuk-heading-s">What happens next</h3>
+
+     <p>
+      Your payment may take around 3 working days to process. </p>
+
+      <p>
+        If you have any questions, you can 
+        <a href="https://www.gov.uk/contact-companies-house">contact us</a>.
+        
+      </p>
+
+  
+
+  
+ 
+  </div>
+
+      
+{% endblock %}
