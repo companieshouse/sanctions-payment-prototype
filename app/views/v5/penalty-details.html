@@ -32,66 +32,29 @@
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
           Penalty details
         </h1>
-        <!--<p class="govuk-hint govuk-">We use 2 reference numbers to identify a penalty, to help keep your information secure.</p>
 
-{# 
-        {{ govukInsetText({
-          text: "We use 2 reference numbers to identify a penalty, to help keep your information secure."
-        }) }} #}-->
+      <!--<p class="govuk-hint govuk-">We use 2 reference numbers to identify a penalty, to help keep your information secure.</p>
 
 
 
-
-<!--- Inset text - multiple penalties are on hold -->
-     {# {{ govukInsetText({
-        text: "You can add more penalties later in the journey"
-      }) }}  #}
-
-
-
-<!--- Company number -->
-        {{ govukInput({
-          label: {
-            text: "What is the company number?",
-            classes: "govuk-label--m",
-            isPageHeading: true
-          },
-          classes: "govuk-input--width-10",
-          hint: {
-            html: "This is 8 characters. Enter it exactly as shown on the penalty notice. 
-            <br>For example, 12345678 or AB123456."
-          },
-          id: "customer-number",
-          name: "customerNumber",
-          values: data["customer-number"]
-        }) }}
+<!- Company number -->
+  <div class="govuk-form-group">
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--m" for="company-number">
+      What is the company number
+    </label>
+  </h1>
+  <div id="company-number-hint" class="govuk-hint">
+  This is 8 characters. Enter it exactly as shown on the penalty notice. 
+  For example, 12345678 or AB123456.
+  </div>
+  <input style="text-transform: uppercase;" type="text" class="govuk-input govuk-input--width-10" id="account-number" name="accountNumber" type="text" spellcheck="false" aria-describedby="account-number-hint" inputmode="numeric">
+</div>
 
 
 
-        {# <!-- Check for error -->
-          {% if errorPenaltyReference %}
-  <!--- ERROR Penalty reference -->
-          {{ govukInput({
-            label: {
-              text: "What is the penalty reference?",
-              classes: "govuk-label--m",
-              isPageHeading: true
-            },
-            classes: "govuk-input--width-10",
-            hint: {
-              text: "This starts with a Y, followed by 7 numbers. For example, Y1234567."
-            },
-              errorMessage: {
-                text: "Enter a penalty reference"
-              },
-            id: "penalty-reference",
-            name: "penaltyReference",
-            values: data["penalty-reference"]
-          }) }}
-          {% else %} #}
-  
 
-
+<!--- Penalty reference -->
   <div class="govuk-form-group">
   <h1 class="govuk-label-wrapper">
     <label class="govuk-label govuk-label--m" for="penalty-reference">
@@ -99,8 +62,7 @@
     </label>
   </h1>
   <div id="penalty-reference-hint" class="govuk-hint">
-   This is 8 characters. Enter it exactly as shown on the penalty notice.
-    For example, 12345678 or AB123456.
+  This starts with X or Y, followed by 7 numbers. For example, X1234567.
   </div>
   <input style="text-transform: uppercase;" type="text" class="govuk-input govuk-input--width-10 govuk-input--extra-letter-spacing" id="account-number" name="accountNumber" type="text" spellcheck="false" aria-describedby="account-number-hint" inputmode="numeric">
 </div>
@@ -108,31 +70,10 @@
 
 
 
-  <!--- Penalty reference -->
-          {{ govukInput({
-            label: {
-              text: "What is the penalty reference?",
-              classes: "govuk-label--m",
-              isPageHeading: true
-            },
-            classes: "govuk-input--width-10",
-            hint: {
-              text: "This starts with X or Y, followed by 7 numbers. For example, X1234567."
-            },
-          classes: "govuk-input--width-10 govuk-input--extra-letter-spacing",
-            id: "penalty-reference",
-            name: "penaltyReference",
-            values: data["penalty-reference"],            
-            style: "text-transform: uppercase;",
-            type: "text"
-          }) }}
-
-
-  {# {% endif %}  #}
 
 
         
-<!--- Details -->
+<!--- Details component -->
 <div class="govuk-!-margin-top-6"> 
   <details class="govuk-details">
     <summary class="govuk-details__summary">
@@ -147,16 +88,6 @@
     </div>
   </details>
   </div>        
-
-
-
-
-
-
-
-
-
-
 
 
 

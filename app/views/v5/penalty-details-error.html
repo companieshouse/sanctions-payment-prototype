@@ -42,82 +42,60 @@
         <p id="address-line-1-error" class="govuk-error-message">
       <span class="govuk-visually-hidden">Error:</span> 
       The details you have entered do not match the information we hold.  Enter the company number and penalty reference exactly as they are shown on your penalty notice.    </p>
-        <!--<p class="govuk-hint govuk-">We use 2 reference numbers to identify a penalty, to help keep your information secure.</p>
-
-{# 
-        {{ govukInsetText({
-          text: "We use 2 reference numbers to identify a penalty, to help keep your information secure."
-        }) }} #}-->
 
 
+<!-- Company number -->
+    <div class="govuk-form-group govuk-form-group--error">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--m" for="company-number">
+          What is the company number
+        </label>
+      </h1>
+      <div id="company-number-hint" class="govuk-hint">
+        This is 8 characters. Enter it exactly as shown on the penalty notice. 
+        For example, 12345678 or AB123456.
+      </div>
+      <input value ="28502424" style="text-transform: uppercase;" type="text" class="govuk-input govuk-input--width-10" id="account-number" name="accountNumber" type="text" spellcheck="false" aria-describedby="account-number-hint" inputmode="numeric">
 
-
-<!--- Inset text - multiple penalties are on hold -->
-     {# {{ govukInsetText({
-        text: "You can add more penalties later in the journey"
-      }) }}  #}
-
-
-
-<!--- Company number -->
-        {{ govukInput({
-          label: {
-            text: "What is the company number?",
-            classes: "govuk-label--m",
-            isPageHeading: true
-          },
-          classes: "govuk-input--width-10",
-          hint: {
-            text: "This is 8 characters. For example, 12345678 or AB123456."
-  },
-  errorMessage: {
-    text: ""
-  },
-          id: "company-number",
-          name: "companyNumber",
-          value: data["company-number-value-wrong"]
-        }) }}
-
-  <!--- Penalty reference -->
-          {{ govukInput({
-            label: {
-              text: "What is the penalty reference?",
-              classes: "govuk-label--m",
-              isPageHeading: true
-            },
-            classes: "govuk-input--width-10",
-            hint: {
-              text: "This starts with a Y, followed by 7 numbers. For example, Y1234567."
-            },
-            errorMessage: {
-              text: ""
-            },
-            classes: "govuk-input--width-10 govuk-input--extra-letter-spacing",
-            id: "penalty-reference",
-            name: "penaltyReference",
-            value: data["penalty-reference-number"]
-          }) }}
-  {# {% endif %}  #}
-
-
-
-
-        
-<!--- Details -->
-<div class="govuk-!-margin-top-6"> 
-  <details class="govuk-details">
-    <summary class="govuk-details__summary">
-      <span class="govuk-details__summary-text">
-        Where to find the penalty details
-      </span>
-    </summary>
-    <div class="govuk-details__text">
-      <p>You'll find these numbers at the top of the penalty notice we sent to you.</p>
-    
-      <img src='/public/images/roe-penalty-notice.png' class='call-out-image' alt=''/>
     </div>
-  </details>
-  </div>        
+
+
+
+
+
+
+<!--- Penalty reference -->
+    <div class="govuk-form-group govuk-form-group--error">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--m" for="penalty-reference">
+          What is the penalty reference?
+        </label>
+      </h1>
+      <div id="penalty-reference-hint" class="govuk-hint">
+        This starts with X or Y, followed by 7 numbers. For example, X1234567.
+      </div>
+      <input value ="Y8294053" style="text-transform: uppercase;" type="text" class="govuk-input govuk-input--width-10 govuk-input--extra-letter-spacing" id="account-number" name="accountNumber" type="text" spellcheck="false" aria-describedby="account-number-hint" inputmode="numeric">
+    </div>
+
+
+
+
+
+            
+<!--- Details -->
+    <div class="govuk-!-margin-top-6"> 
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Where to find the penalty details
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>You'll find these numbers at the top of the penalty notice we sent to you.</p>
+          <img src='/public/images/roe-penalty-notice.png' class='call-out-image' alt=''/>
+        </div>
+      </details>
+      </div>        
 
 
 
