@@ -90,6 +90,24 @@
           }) }}
           {% else %} #}
   
+
+
+  <div class="govuk-form-group">
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--m" for="penalty-reference">
+      What is the penalty reference?
+    </label>
+  </h1>
+  <div id="penalty-reference-hint" class="govuk-hint">
+   This is 8 characters. Enter it exactly as shown on the penalty notice.
+    For example, 12345678 or AB123456.
+  </div>
+  <input style="text-transform: uppercase;" type="text" class="govuk-input govuk-input--width-10 govuk-input--extra-letter-spacing" id="account-number" name="accountNumber" type="text" spellcheck="false" aria-describedby="account-number-hint" inputmode="numeric">
+</div>
+
+
+
+
   <!--- Penalty reference -->
           {{ govukInput({
             label: {
@@ -104,7 +122,9 @@
           classes: "govuk-input--width-10 govuk-input--extra-letter-spacing",
             id: "penalty-reference",
             name: "penaltyReference",
-            values: data["penalty-reference"]
+            values: data["penalty-reference"],            
+            style: "text-transform: uppercase;",
+            type: "text"
           }) }}
 
 
