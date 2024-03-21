@@ -21,7 +21,7 @@
       <form class="form" action="/path/of/next/page" method="post">
 
         <!---<span class="govuk-caption-xl">STARDUST LIMITED</span> -->
-<h1 class="govuk-heading-xl">Penalty summary for STARDUST LIMITED (28502425)</h1>
+<h1 class="govuk-heading-xl">Penalty summary</h1>
     </div>
   </div>
 
@@ -32,6 +32,14 @@
     {{ govukSummaryList({
         classes: "govuk-!-margin-bottom-9",
         rows: [
+        {
+            key: {
+              text: "Issued to "
+            },
+            value: {
+              text: "STARDUST LIMITED (28502425)"
+            }
+          },
           {
             key: {
               text: "Type of penalty"
