@@ -1,15 +1,16 @@
  {% extends "layouts/main.html" %} 
 
 {% block pageTitle %}
-  Payment received - {{ serviceName }} – GOV.UK Prototype Kit
+  Payment received - {{ serviceName }} - GOV.UK Prototype Kit
 {% endblock %}
-
-{% set mainClasses = "govuk-main-wrapper--l" %}
 
 {% block beforeContent %}
 {% include "includes/banner.html" %}
+{% include "includes/no-back-link.html" %}
 {% include "includes/signed-in.html" %}
 {% endblock %}
+
+{% set mainClasses = "govuk-main-wrapper--l" %}
 
 {% from "govuk/components/panel/macro.njk" import govukPanel %}
 
@@ -94,8 +95,34 @@
   <div class="further-action"> 
      <h2 class="govuk-heading-m">Check if further action is needed</h2> 
           <p class="govuk-body">
-            You've paid your penalty, but you may need to take further action to address the reason it was issued. 
+            You've paid your penalty, but you may need to take further action to address the reason it was issued:<br><b>
+            <p>Failure to provide an appropriate registered email address</p>
+            </b>
           </p> 
+
+
+
+{# TABLE idea
+                          <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Reason for the penalty</th>
+          <td class="govuk-table__cell">	Failure to provide an appropriate registered email address</td>
+        </tr>
+      </tbody>
+    </table> #}
+
+          {# <p class="govuk-body">
+            The reason the penalty was issued:
+            <br>
+            <b>
+            Failure to provide an appropriate registered email address
+            </b>
+          </p>  #}
 
           <div class="govuk-warning-text govuk-!-margin-bottom-0">
             <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
