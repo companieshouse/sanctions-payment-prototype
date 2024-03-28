@@ -1,0 +1,133 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  {# {% if errorList.length > 0 %}
+    Error:
+  {% endif %} #}
+  Error: Penalty details - {{ serviceName }} - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/banner.html" %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% include "includes/signed-in.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: " The details you have entered do not match the information we hold.  Enter the account number and penalty reference exactly as they are shown on your penalty notice.",
+      href: "#customer-number"
+    }
+  ]
+}) }}
+
+
+      <form action="{{currentUrl}}" method="post">
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+          Penalty details
+        </h1>
+        <p id="address-line-1-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> 
+      The details you have entered do not match the information we hold.  Enter the account number and penalty reference exactly as they are shown on your penalty notice.    </p>
+
+
+<!-- Company number - has style that is prototype code only, not suitable for production -->
+    <div class="govuk-form-group govuk-form-group--error">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--m" for="company-number">
+          What is the account number?
+        </label>
+      </h1>
+      <div id="company-number-hint" class="govuk-hint">
+         Enter it exactly as shown on the penalty notice. 
+        
+      </div>
+      <input value ="28502424" style="text-transform: uppercase;" type="text" class="govuk-input govuk-input--width-10" id="account-number" name="accountNumber" type="text" spellcheck="false" aria-describedby="account-number-hint" inputmode="numeric">
+
+    </div>
+
+
+
+
+
+
+<!--- Penalty reference - has style that is prototype code only, not suitable for production -->
+    <div class="govuk-form-group govuk-form-group--error">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--m" for="penalty-reference">
+          What is the penalty reference?
+        </label>
+      </h1>
+      <div id="penalty-reference-hint" class="govuk-hint">
+        This starts with X or Y, followed by 7 numbers. For example, X1234567.
+      </div>
+      <input value ="Y8294053" style="text-transform: uppercase;" type="text" class="govuk-input govuk-input--width-10 govuk-input--extra-letter-spacing" id="account-number" name="accountNumber" type="text" spellcheck="false" aria-describedby="account-number-hint" inputmode="numeric">
+    </div>
+
+
+
+
+
+            
+<!--- Details -->
+    <div class="govuk-!-margin-top-6"> 
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Where to find the penalty details
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>You'll find these numbers at the top of your penalty notice.</p>
+          <img src='/public/images/roe-penalty-notice.png' class='call-out-image' alt=''/>
+        </div>
+      </details>
+      </div>        
+
+
+
+
+
+
+<!--- Button -->
+        {{ govukButton({
+          text: "Continue",
+          href: "penalty-summary"
+        }) }}
+
+      </form>
+
+
+
+
+
+
+
+<!-- Links for testing-->
+{# <div class="govuk-button-group">
+<div class="govuk-!-margin-top-9">
+      <p class="govuk-body-xs"> Stop screens: <br>
+        <a href="stop-this-penalty-has-already-been-paid" class="govuk-link--no-visited-state">This penalty has already been paid</a><br>
+        <a href="stop-sorry-there-is-a-problem-with-this-service" class="govuk-link--no-visited-state">Sorry, there is a problem with the service</a><br>
+        <a href="stop-you-need-to-pay-another-way" class="govuk-link--no-visited-state">Stop screen: You need to pay another way</a>
+      </p>
+      </div>  
+      </div> #}
+
+    </div>
+  </div>
+
+{% endblock %}

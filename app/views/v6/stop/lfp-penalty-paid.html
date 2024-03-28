@@ -1,0 +1,37 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/banner.html" %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% include "includes/signed-in.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/path/of/next/page" method="post">
+
+        <h1 class="govuk-heading-xl">
+          Late filing penalty for STARTDUST LIMITED (28502425)
+        </h1>
+
+
+      <p>
+        This penalty with a reference <strong>Y8294053</strong> has been paid. No further action is required.
+      </p>
+
+
+
+
+
+      
+{% endblock %}
