@@ -9,7 +9,7 @@
 
 
 {{ govukTag({
-  text: "Version 5",
+  text: "Version 6",
   classes: "govuk-tag--green"
 }) }}
 
@@ -43,8 +43,10 @@
 
 <h2 class="govuk-heading-m">Screens</h2>
 
+  <h3 class="govuk-heading-s">J</h3>
+  <ul class="govuk-list govuk-list--bullet">    
 
-<ul class="govuk-list govuk-list--bullet">    
+
     <li>
     <a class="govuk-link govuk-link--no-visited-state" href="pay-a-penalty">
       Pay a penalty start page
@@ -66,10 +68,7 @@
       Penalty details
       </a>
   </li>
-      <li>
-      <a class="govuk-link govuk-link--no-visited-state" href="penalty-details-error">
-      Penalty details - ERROR
-      </a>
+
   </li>
 
     <li>
@@ -80,7 +79,7 @@
 
       <li>
       <a class="govuk-link govuk-link--no-visited-state" href="https://products.payments.service.gov.uk/pay/81dafb56e27f404e9e6ab8b318affd8a">
-      Payment screens
+      Payment screens (built externally)
       </a>
   </li>
 
@@ -96,43 +95,58 @@
   </li>
   </ul>
 
+  <h3 class="govuk-heading-m">Errors example</h3>
+    <ul class="govuk-list govuk-list--bullet">    
+      <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="penalty-details-error">
+      Penalty details - ERROR
+      </a>
+  </ul>
 
 
 
-<h2 class="govuk-heading-m">Bank transfer and stop screens</h2>
+  <h3 class="govuk-heading-m">Bank tranfer screens</h3>
+    <ul class="govuk-list govuk-list--bullet">    
+      <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="bank-transfer/which-penalty-service">
+        Find out which bank details to use
+      </a>
+      <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="bank-transfer/sanctions-details">
+        Pay by bank transfer  (Sanction: Y or X)
+      </a>
+      <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="bank-transfer/late-filing-details">
+        Pay by bank transfer (LFP: A)
+      </a>
+      <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="penalty-details-error">
+        Pay by bank transfer (ROE: U or Z?) TBA 
+      </a>
+      </ul>
+
+
+<h2 class="govuk-heading-m">Stop screens</h2>
 <ul class="govuk-list govuk-list--bullet">    
-
       <li>
       <a class="govuk-link govuk-link--no-visited-state" href="stop-you-need-to-pay-another-way">
-      Stop screen: You need to pay by bank transfer
+      Stop screen: You need to pay by bank transfer (Sanctions) WIP
       </a>
   </li>
+        <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="#">
+      Stop screen: You need to pay by bank transfer (LFP) WIP
+      </a>
+  </li>
+        <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="#">
+      Stop screen: You need to pay by bank transfer (ROE) WIP
+      </a>
+  </li>
+    <br>
     <li>
       <a class="govuk-link govuk-link--no-visited-state" href="stop-this-penalty-has-already-been-paid">
       Stop screen: This penalty has already been paid
-      </a>
-  </li>
-
-    <li>
-      <a class="govuk-link govuk-link--no-visited-state" href="stop-sorry-there-is-a-problem-with-this-service">
-      Stop screen: Sorry, there is a problem with the service
-      </a>
-  </li>
-  <br>
-      <li>
-      <a class="govuk-link govuk-link--no-visited-state" href="bank-transfer/penalty-type">
-      TBA - Penalty type
-      </a>
-  </li>
-    <li>
-      <a class="govuk-link govuk-link--no-visited-state" href="bank-transfer/sanctions-details">
-      TBA - Stop screen: Bank transfer - sanctions 
-      </a>
-  </li>
-
-    <li>
-      <a class="govuk-link govuk-link--no-visited-state" href="bank-transfer/late-filing-details">
-      Stop screen: Bank transfer - late filing details
       </a>
   </li>
 </ul>
@@ -150,59 +164,11 @@
   <ul class="govuk-list govuk-list--bullet">     
 
   <li>
-    <a class="govuk-link govuk-link--no-visited-state" href="start">
-      Start page
+    <a class="govuk-link govuk-link--no-visited-state" href="../index">
+      See earlier versions
     </a>
   </li>
-  <li>
-      <a class="govuk-link govuk-link--no-visited-state" href="archived/before-you-start">
-      Before you start
-      </a>
-    </li>
-
-    <li>
-      <a class="govuk-link govuk-link--no-visited-state" href="archived/do-you-want-to-sign-in">
-      Do you want to sign in?
-      </a>
-    </li>
-
   
-    <li>
-      <a class="govuk-link govuk-link--no-visited-state" href="archived/enter-email-address">
-      What is the email address you need the notification of payment sent to?
-      </a>
-    </li>
-
-    <li>
-      <a class="govuk-link govuk-link--no-visited-state" href="archived/email-address-correct">
-      Is this email address correct?
-      </a>
-    </li>
-
-    <li>
-      <a class="govuk-link govuk-link--no-visited-state" href="archived/penalty-summary-v2">
-      Penalty summary: Option 2
-      </a>
-    </li>
-
-    <li>
-      <a class="govuk-link govuk-link--no-visited-state" href="archived/penalty-summary-v3">
-      Penalty summary: Option 3
-      </a>
-    </li>
-
-      <li>
-      <a class="govuk-link govuk-link--no-visited-state" href="archived/card-payment">
-      Enter card details
-      </a>
-    </li>
-
-    <li>
-      <a class="govuk-link govuk-link--no-visited-state" href="confirm-your-payment">
-      Confirm your payment
-      </a>
-    </li>
-    </ul>
   </div>
   </div>
   
@@ -236,7 +202,7 @@
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
     <a class="govuk-link govuk-body-m govuk-link--no-visited-state" 
-      href="https://companieshouse.atlassian.net/wiki/spaces/NS/pages/4395401268/Iterations+to+prototype+after+Round+1+user+testing" target="_blank">
+      href="https://companieshouse.atlassian.net/wiki/spaces/NS/pages/4548001793/Iterations+to+prototype+after+Round+5+user+testing" target="_blank">
       <strong>Confluence documentation of changes</strong>
    </a>
   {# <p class="govuk-body">Confluence</p> #}
