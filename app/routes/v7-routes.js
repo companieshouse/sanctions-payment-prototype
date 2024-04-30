@@ -9,6 +9,27 @@ const router = govukPrototypeKit.requests.setupRouter()
 // Add your routes here
 
 
+
+//   // ******* penalty type question ********************************
+
+// router.post('/v7/02-what-does-the-penalty-reference-start-with', function(request, response) {
+//   var penalty = request.body.penalty; // Assuming you're using body-parser middleware to parse the form data
+
+//   if (penalty === "sanction") {
+//     response.redirect("/v7/04-penalty-details-sanction");
+//   } else if (penalty === "roe") {
+//     response.redirect("/v7/04c-penalty-details-roe");
+//   } else if (penalty === "lfp") {
+//     response.redirect("/v7/04b-penalty-details-lfp");
+//   } else {
+//     // Handle any other case or error scenario
+//     response.redirect("/error-page");
+//   }
+// });
+
+
+
+
   // ******* filter-question ********************************
   router.get('/v7/filter-question', function (req, res) {
     // Set URl

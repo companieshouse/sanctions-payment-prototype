@@ -18,11 +18,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v1/do-you-want-to-sign-in" method="post">
+      <form class="form" action="/sign-in" method="post">
 
 
 <!-- Heading and radio buttons -->
-<div class="govuk-form-group">
+<div class="govuk-form-group" id="penalty">
   <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
       <h1 class="govuk-fieldset__heading">
@@ -33,31 +33,25 @@
  
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway" aria-describedby="signIn-item-hint">
-        <label class="govuk-label govuk-radios__label" for="signIn">
+        <input class="govuk-radios__input" id="lfp" name="lfp" type="radio" value="government-gateway" aria-describedby="signIn-item-hint">
+        <label class="govuk-label govuk-radios__label" for="lfp">
           A
         </label>
-        <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-          
-        </div>
       </div>
+
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login" aria-describedby="signIn-2-item-hint">
-        <label class="govuk-label govuk-radios__label" for="signIn-2">
+        <input class="govuk-radios__input" id="roe" name="roe" type="radio" value="govuk-one-login" aria-describedby="signIn-2-item-hint">
+        <label class="govuk-label govuk-radios__label" for="roe">
           U or Z
         </label>
-        <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
-          
-        </div>
       </div>
+
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login" aria-describedby="signIn-2-item-hint">
-        <label class="govuk-label govuk-radios__label" for="signIn-2">
+        <input class="govuk-radios__input" id="sanction" name="sanction" type="radio" value="govuk-one-login" aria-describedby="signIn-2-item-hint">
+        <label class="govuk-label govuk-radios__label" for="sanction">
           X or Y
         </label>
-        <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
-         
-        </div>
+
       </div>
     </div>
   </fieldset>
@@ -84,8 +78,7 @@
 
 <!-- Button -->
         {{ govukButton({
-          text: "Continue",
-          href: "03-sign-in"
+          text: "Continue"
         }) }}
 
       </form>
