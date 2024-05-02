@@ -1,4 +1,4 @@
- {% extends "layouts/main.html" %} 
+{% extends "layouts/main.html" %} 
 
 {% block pageTitle %}
   Payment received - {{ serviceName }} - GOV.UK Prototype Kit
@@ -19,8 +19,8 @@
     <div class="govuk-grid-column-two-thirds">
       {{ govukPanel({
         classes: "govuk-!-margin-bottom-7",
-        titleText: "You have paid this penalty",
-        html: "Penalty reference: <b>Y8294053</b>"
+        titleText: "Penalty paid",
+        html: "Penalty reference: <b>A8294053</b>"
       }) }}
 
 
@@ -40,7 +40,7 @@
           },
            {
             key: {
-              text: "Case reference"
+              text: "Company number"
             },
             value: {
               text: "28502425"
@@ -51,7 +51,7 @@
               text: "Reason for penalty"
             },
             value: {
-              text: "Failure to provide an appropriate registered email address"
+              text: "Late filing of accounts (3-6 months after due date)"
             }
           },
            {
@@ -67,7 +67,7 @@
               text: "Amount"
             },
             value: {
-              html: "£250.00 (no VAT is charged)"
+              html: "£750.00 (no VAT is charged)"
             }
           }
         ]
@@ -76,7 +76,7 @@
 <!-- Emailed details -->
       <p class="govuk-body">
         We've emailed these details to <strong>user@testcompany.co.uk</strong>. 
-        You'll also receive an email with your payment reference from GOV.UK Pay confirming that your payment was successful. 
+        GOV.UK Pay will also send an email confirming that your payment was successful. 
   
       </p>
 
@@ -96,12 +96,30 @@
 
 <!--Email reminders -->
   <div class="further-action"> 
-     <h2 class="govuk-heading-m">Sign up to email reminders</h2> 
+     <h2 class="govuk-heading-m">Sign up for email reminders</h2> 
           <p class="govuk-body">
-        Lorem ipsum
-            <br><b></p>
-        
+            You can sign up to receive <a href="#" class="govuk-link">email reminders</a> to file your company accounts. This will help you file on time in future and avoid penalties.
+            
+
+          <!--<p class="govuk-body">
+            <b>Failure to provide an appropriate registered email address </b>
+            
+            </p>-->
+
+         <!--<p class="govuk-body">
+          Use our <a href="https://find-and-update.company-information.service.gov.uk/registered-email-address" class="govuk-link">Update a registered email address</a> service to provide an appropriate registered email address. <br><b>-->
+
+          <!--<div class="govuk-warning-text govuk-!-margin-bottom-0">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-visually-hidden">Warning</span>
+              Does this issue still need to be resolved? If so, you may still be committing an offence and at risk of more penalties or prosecution.
+            </strong>
+          </div> -->
   </div>
+
+
+
 
 
 <!--Another penalty -->
@@ -112,13 +130,14 @@
       </p>
 
 
-{# 
+
 <!-- Contact us -->
       <h2 class="govuk-heading-m">Our contact details</h2>
 
       <p class="govuk-body">
-        You can use this service again to <a href="which-penalty-service" class="govuk-link">pay another penalty</a>. 
-      </p> #}
+      enquiries@companieshouse.gov.uk<p class="govuk-body">
+        Telephone: 0303 1234 500</a> </a> 
+      </p> 
 
       <br><br>
 
