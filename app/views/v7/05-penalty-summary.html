@@ -81,7 +81,11 @@
             value: {
               html: "£250.00 (no VAT is charged)"
             }
-          },
+          }
+        ]
+      }) }}
+
+      {# ,
           {
             key: {
               text: "Interest at X%"
@@ -89,19 +93,19 @@
             value: {
               html: "£27.65"
             }
-          }
-        ]
-      }) }}
+          } #}
 
 {# <p class ="govuk-body-l"><strong>Total: £250 </strong></p> #}
 
-<p class ="govuk-body-l"><strong>Total: £277.65 </strong></p>
+<p class ="govuk-body-l"><strong>Total: £250.00 </strong></p>
 
-<!-- Interest details -->
-<p class="govuk-body"> This total includes any interest. Interest is added daily after the due date.<!---{{ govukDetails({
+{# <!-- Interest details -->
+<p class="govuk-body"> This total includes any interest. Interest is added daily after the due date.
+  
+  {{ govukDetails({
     summaryText: "Interest on penalties",
     text: "A percentage of interest is applied daily to each penalty after the due by date."
-  }) }}--->
+  }) }} #}
 
 <!--- Button green -->
 <!-- use card number 4000056655665556 --></p>
