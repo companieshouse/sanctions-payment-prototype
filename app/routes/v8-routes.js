@@ -104,12 +104,12 @@ const router = govukPrototypeKit.requests.setupRouter()
     router.post('/v8/03-sign-in', function(request, response) {
        var penalty = request.session.data['penalty']
           if (penalty == "lfp") {
-                response.redirect("/v8/04-penalty-details-sanction")
+                response.redirect("/v8/04b-penalty-details-lfp")
               } else if (penalty == "roe") {
                 response.redirect("/v8/04c-penalty-details-roe")
                } else {
              // sanction
-                 response.redirect("/error-page")
+                 response.redirect("/v8/04-penalty-details-sanction")
                }
              });
 
