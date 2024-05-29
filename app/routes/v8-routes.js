@@ -102,10 +102,10 @@ const router = govukPrototypeKit.requests.setupRouter()
   
     // routes for 'What does the penalty reference start with
     router.post('/v8/03-sign-in', function(request, response) {
-      // var penalty = request.session.data['penalty']
-          if (request.session.data['lfp'] == "lfp") {
+       var penalty = request.session.data['penalty']
+          if (penalty == "lfp") {
                 response.redirect("/v8/04-penalty-details-sanction")
-              } else if (request.session.data['roe'] == "roe") {
+              } else if (penalty == "roe") {
                 response.redirect("/v8/04c-penalty-details-roe")
                } else {
              // sanction
