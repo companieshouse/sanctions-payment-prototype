@@ -15,7 +15,16 @@ router.use('/', require('./routes/v3-routes.js'))
 router.use('/', require('./routes/v7-routes.js'))
 router.use('/', require('./routes/v8-routes.js'))
 
-
+// Show session data and URLs in the terminal  
+router.use((req, res, next) => {  
+    const log = {  
+      method: req.method,  
+      url: req.originalUrl,  
+      data: req.session.data  
+    }  
+    console.log(JSON.stringify(log, null, 2))  
+    next()  
+  }) 
 // Filter question
 // router.post('/v1/filter-question', function(request, response) {
 

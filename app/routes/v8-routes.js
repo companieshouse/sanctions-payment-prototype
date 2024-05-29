@@ -10,6 +10,10 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 
 
+
+
+
+
 //   // ******* penalty type question ********************************
 
 // router.post('/v8/02-what-does-the-penalty-reference-start-with', function(request, response) {
@@ -41,33 +45,33 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 
   // ******* ERROR filter-question ********************************
-  router.post('/v8/filter-question', function (req, res) {
+  // router.post('/v8/filter-question', function (req, res) {
     // Create empty array
-    var errors = []
+   // var errors = []
   
     // Check if user has filled out a value
-    if (typeof req.session.data['applyToYou'] === 'undefined') {
+  //  if (typeof req.session.data['applyToYou'] === 'undefined') {
       // No value so add error to array (the Error summary)
-      errors.push({
-        text: 'Select which of these apply to the penalty, or select \'None of these\'',
-        href: '#applyToYou'
-      })
+  //    errors.push({
+  //      text: 'Select which of these apply to the penalty, or select \'None of these\'',
+     //   href: '#applyToYou'
+   //   })
   
       // Re-show page with error value as true so errors will show
-      res.render('v8/filter-question', {
-        errorApplyToYou: true,
-        errorList: errors
-      })
-    } else {
+    //  res.render('v8/filter-question', {
+     //   errorApplyToYou: true,
+    //    errorList: errors
+   //   })
+ //  } else {
           // User inputted a specific value, in this case 'none'
-          if (req.session.data['applyToYou'] == 'none') {   // this was === which doesn't work, changing to == seems to work?!
-            res.redirect('/v8/sign-in')
-          } else {
+       //   if (req.session.data['applyToYou'] == 'none') {   // this was === which doesn't work, changing to == seems to work?!
+        //    res.redirect('/v8/sign-in')
+       //   } else {
             // User inputted any other value
-            res.redirect('/v8/stop-you-need-to-pay-another-way')
-          }
-    }
-  })
+        //    res.redirect('/v8/stop-you-need-to-pay-another-way')
+      //    }
+   // }
+ // })
 
 
 
@@ -96,7 +100,25 @@ const router = govukPrototypeKit.requests.setupRouter()
     //   })
   
   
+    // routes for 'What does the penalty reference start with
+    router.post('/v8/03-sign-in', function(request, response) {
+      // var penalty = request.session.data['penalty']
+          if (request.session.data['lfp'] == "lfp") {
+                response.redirect("/v8/04-penalty-details-sanction")
+              } else if (request.session.data['roe'] == "roe") {
+                response.redirect("/v8/04c-penalty-details-roe")
+               } else {
+             // sanction
+                 response.redirect("/error-page")
+               }
+             });
 
+
+    router.post('/v8/02-what-does-the-penalty-reference-start-with', function(request, response) {
+       response.redirect("/v8/03-sign-in")
+                
+               });
+  
 
 
 
