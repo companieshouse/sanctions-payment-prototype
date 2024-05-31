@@ -67,18 +67,17 @@
               text: "Amount"
             },
             value: {
-              html: "£10,000.00 (no VAT is charged)"
+              html: "£10,000 (no VAT is charged)"
             }
           }
         ]
       }) }}
 
 <!-- Emailed details -->
-<p class="govuk-body">
-  We've emailed these details to <strong>user@testcompany.co.uk</strong>. 
-  GOV.UK Pay will also send an email confirming that your payment was successful. 
+<div class="govuk-inset-text">
+  We've emailed these details to <b>user@testcompany.co.uk</b>. 
+  GOV.UK Pay will also send an email confirming that your payment was successful.</div>
 
-</p>
 
 
 <!-- What happens next -->
@@ -153,11 +152,11 @@
 
       <br><br>
 
-        {{ govukButton({
+      {#{{ govukButton({
           text: "Print this page",
           classes: "govuk-button--secondary",
           href: "javascript: window.print()"
-        }) }} <!--  to developers, this is a JS-reliant button just for prototyping-->
+        }) }} #}<!--  to developers, this is a JS-reliant button just for prototyping-->
         <!-- the production site would need a non-JS solution OR the you could use JS to hide the button, as in people without JS would not see a button, rather than see a broken button -->
      
 

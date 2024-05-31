@@ -74,11 +74,9 @@
       }) }}
 
 <!-- Emailed details -->
-      <p class="govuk-body">
-        We've emailed these details to <strong>user@testcompany.co.uk</strong>. 
-        GOV.UK Pay will also send an email confirming that your payment was successful. 
-  
-      </p>
+<div class="govuk-inset-text">
+  We've emailed these details to <b>user@testcompany.co.uk</b>. 
+  GOV.UK Pay will also send an email confirming that your payment was successful.</div>
 
 
 <!-- What happens next -->
@@ -99,6 +97,7 @@
      <h2 class="govuk-heading-m">Sign up for email reminders</h2> 
           <p class="govuk-body">
             You can sign up to receive <a href="#" class="govuk-link">email reminders</a> to file your company accounts. This will help you file on time in future and avoid penalties.
+            
             
 
           <!--<p class="govuk-body">
@@ -132,20 +131,20 @@
 
 
 <!-- Contact us -->
-      <h2 class="govuk-heading-m">Our contact details</h2>
+{# <h2 class="govuk-heading-m">Our contact details</h2>
 
       <p class="govuk-body">
       enquiries@companieshouse.gov.uk<p class="govuk-body">
         Telephone: 0303 1234 500</a> </a> 
-      </p> 
+      </p> #}
 
       <br><br>
 
-        {{ govukButton({
-          text: "Print this page",
-          classes: "govuk-button--secondary",
-          href: "javascript: window.print()"
-        }) }} <!--  to developers, this is a JS-reliant button just for prototyping-->
+      {#{{ govukButton({
+        text: "Print this page",
+        classes: "govuk-button--secondary",
+        href: "javascript: window.print()"
+      }) }} #} <!--  to developers, this is a JS-reliant button just for prototyping-->
         <!-- the production site would need a non-JS solution OR the you could use JS to hide the button, as in people without JS would not see a button, rather than see a broken button -->
      
 
