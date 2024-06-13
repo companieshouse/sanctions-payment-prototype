@@ -14,6 +14,7 @@ router.use('/', require('./routes/v2-routes.js'))
 router.use('/', require('./routes/v3-routes.js'))
 router.use('/', require('./routes/v7-routes.js'))
 router.use('/', require('./routes/v8-routes.js'))
+router.use('/', require('./routes/v9-routes.js'))
 
 // Show session data and URLs in the terminal  
 router.use((req, res, next) => {  

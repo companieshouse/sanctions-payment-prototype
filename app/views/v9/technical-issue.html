@@ -1,0 +1,96 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/start" method="post">
+
+  <h1 class="govuk-heading-l">
+    Get help with a technical problem
+  </h1>
+      
+    <p>Only use this form to report technical problems</p>
+
+    <p>Do not include any personal or financial information. For example, your credit card number.</p>
+
+
+
+<!-- Full name --> 
+
+  {{ govukInput({
+    label: {
+      text: "Full Name"
+    },
+    classes: "govuk-input--width-20",
+    id: "tech-full-name",
+    name: "techFullName"
+  }) }}
+
+
+<!-- Email address --> 
+  {{ govukInput({
+    label: {
+      text: "Email address"
+    },
+    classes: "govuk-input--width-20",
+    id: "tech-email-address",
+    name: "techEmailAddress"
+  }) }}
+
+
+
+<!-- What were you doing? --> 
+
+  {{ govukCharacterCount({
+    name: "techWhatDoing",
+    id: "tech-what-doing",
+    maxlength: 1000,
+    label: {
+      text: "What were you doing?"
+    }
+  }) }}
+
+
+
+<!-- What do you need help with? --> 
+
+  {{ govukCharacterCount({
+    name: "techHelp",
+    id: "tech-help",
+    maxlength: 1000,
+    label: {
+      text: "What do you need help with?"
+    }
+  }) }}
+
+
+<!-- Button --> 
+
+        {{ govukButton({
+        text: "Send",
+        href: "start"
+        }) }}
+        
+
+      </form>
+    </div>
+  </div>
+
+
+    </div>
+  </div>
+
+{% endblock %}

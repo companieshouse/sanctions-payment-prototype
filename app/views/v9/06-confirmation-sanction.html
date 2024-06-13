@@ -1,0 +1,181 @@
+ {% extends "layouts/main.html" %} 
+
+{% block pageTitle %}
+  Payment received - {{ serviceName }} - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/banner.html" %}
+{% include "includes/no-back-link.html" %}
+{% include "includes/signed-in.html" %}
+{% endblock %}
+
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% from "govuk/components/panel/macro.njk" import govukPanel %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukPanel({
+        classes: "govuk-!-margin-bottom-7",
+        titleText: "Penalty paid",
+        html: "Penalty reference: <b>Y8294053</b>"
+      }) }}
+
+
+
+
+<!--- Penalty summary list -->
+
+    {{ govukSummaryList({
+        rows: [
+        {
+            key: {
+              text: "Issued to "
+            },
+            value: {
+              text: "STARDUST LIMITED"
+            }
+          },
+           {
+            key: {
+              text: "Case reference"
+            },
+            value: {
+              text: "28502425"
+            }
+          },
+          {
+            key: {
+              text: "Reason for penalty"
+            },
+            value: {
+              text: "Failure to provide an appropriate registered email address"
+            }
+          },
+           {
+            key: {
+              text: "Paid on"
+            },
+            value: {
+              text: "13 May 2024"
+            }
+          },
+          {
+            key: {
+              text: "Amount"
+            },
+            value: {
+              html: "£250.00 (no VAT is charged)"
+            }
+          }
+        ]
+      }) }}
+
+
+  <!-- Emailed details -->
+<div class="govuk-inset-text">
+  We've emailed these details to <b>user@testcompany.co.uk</b>. 
+  GOV.UK Pay will also send an email confirming that your payment was successful.</div>
+
+<!-- What happens next -->
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">
+        We'll process your payment straight away.
+      </p>
+  
+      <p>
+        You do not need to contact us to tell us that you've paid.
+      </p>
+      
+
+
+<!--Further action -->
+  <div class="further-action"> 
+     <h2 class="govuk-heading-m">Check if you need to take further action</h2> 
+          <p class="govuk-body">
+            This penalty was issued because of the following offence:
+            <br><b></p>
+
+          <p class="govuk-body">
+            <b>Failure to provide an appropriate registered email address </b>
+            
+            </p>
+
+         <!--<p class="govuk-body">
+          Use our <a href="https://find-and-update.company-information.service.gov.uk/registered-email-address" class="govuk-link">Update a registered email address</a> service to provide an appropriate registered email address. <br><b>-->
+
+          <div class="govuk-warning-text govuk-!-margin-bottom-0">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-visually-hidden">Warning</span>
+              Does this issue still need to be resolved? If so, you may still be committing an offence and at risk of more penalties or prosecution.
+            </strong>
+
+          </p><p class="govuk-body"><a href="https://www.gov.uk/contact-companies-house" class="govuk-link">Contact us</a> if you are unsure of what you need to do.
+          </div> 
+  </div>
+
+{# 
+    <div class="govuk-inset-text">
+        Address the reason for the penalty if not done so already
+    </div> 
+    
+
+            <dl class="govuk-!-margin-bottom-4 govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Reason for penalty
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p>
+                Failure to provide an appropriate registered email address
+              </p>
+            </dd>
+          </div>#}
+
+
+
+
+<!--Another penalty -->
+      <h2 class="govuk-heading-m">If you have another penalty to pay </h2>
+
+      <p class="govuk-body">
+        You can use this service again to <a href="which-penalty-service" class="govuk-link">pay another penalty</a>. 
+      </p>
+
+
+
+<!-- Contact us -->
+      <!--<h2 class="govuk-heading-m">Our contact details</h2>
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link">enquiries@companieshouse.gov.uk</a><p class="govuk-body">
+        Telephone: 0303 1234 500</a> </a> 
+      </p> -->
+
+      <br><br>
+
+      {#{{ govukButton({
+        text: "Print this page",
+        classes: "govuk-button--secondary",
+        href: "javascript: window.print()"
+      }) }} #} <!--  to developers, this is a JS-reliant button just for prototyping-->
+        <!-- the production site would need a non-JS solution OR the you could use JS to hide the button, as in people without JS would not see a button, rather than see a broken button -->
+     
+        <br>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+      </p>
+
+
+      <p class="govuk-body-xs govuk-!-margin-top-9">
+        <a href="email-confirmation" class="govuk-link">Confirmation email (link for testing only)</a> 
+      </p>
+    </div>
+  </div>
+
+
+{% endblock %}

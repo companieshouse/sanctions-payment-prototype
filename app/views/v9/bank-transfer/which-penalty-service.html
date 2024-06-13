@@ -1,0 +1,117 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  What type of penalty do you need to pay? - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/banner.html" %}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="/v1/do-you-want-to-sign-in" method="post">
+
+    <h1 class="govuk-heading-xl">
+    Find out which bank details to use
+    </h1>
+
+    {# <p> 
+      <b>
+        Different penalties use different account details.
+      </b>
+    </p> #}
+
+    <p class="govuk-body">
+      We need to ask you about your penalty reference, so that we can show you the correct bank details for the type of penalty you’re paying.</a>
+    </p>
+
+<!-- Heading and radio buttons -->
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+    <h2 class="govuk-fieldset__heading">
+        What does the penalty reference start with?
+      </h2>
+   <p class="govuk-hint govuk-!-margin-top-3">For example, the penalty reference A1234567 starts with A.</p>
+  
+  </legend>
+
+  <div class="govuk-radios" data-module="govuk-radios">
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway" aria-describedby="signIn-item-hint">
+      <label class="govuk-label govuk-radios__label" for="signIn">
+        A
+      </label>
+      <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+        
+      </div>
+    </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login" aria-describedby="signIn-2-item-hint">
+      <label class="govuk-label govuk-radios__label" for="signIn-2">
+        U or Z
+      </label>
+      <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
+        
+      </div>
+    </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login" aria-describedby="signIn-2-item-hint">
+      <label class="govuk-label govuk-radios__label" for="signIn-2">
+        X or Y
+      </label>
+      <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
+       
+      </div>
+    </div>
+  </div>
+</fieldset>
+</div>
+
+
+<div class="govuk-!-margin-top-6"> 
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Help with the penalty reference
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p>You'll find the penalty reference at the top of your penalty notice.</p>
+    <p> Email <a href="#">enquiries@companieshouse.gov.uk</a> for help if: 
+      <ul class="govuk-list govuk-list--bullet">
+        <li>your penalty reference does not start with any of these letters</li>
+        <li>you have lost your penalty notice - use 'Lost penalty notice' as the email subject, and tell us as much information as you can about the penalty so we can pass your message to the right team</li>
+      </ul>
+    {# <img src='/public/images/roe-penalty-notice.png' class='call-out-image' alt=''/>
+ 
+ <br>
+    <img src='/public/images/penalty-notice-image.png' class='call-out-image' alt=''/> #}
+
+  </div>
+</details>
+</div>        
+
+<!-- Button -->
+      {{ govukButton({
+        text: "Continue",
+        href: "roe-details"
+      }) }}
+
+    </form>
+
+
+  </div>
+</div>
+
+{% endblock %}
