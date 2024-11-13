@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Question page template - {{ serviceName }} – GOV.UK Prototype Kit
+  Sorry, the service is unavailable - {{ serviceName }} - GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -10,31 +10,21 @@
   text: "Back",
   href: "javascript:window.history.back()"
 }) }}
-{% include "includes/signed-in.html" %}
 {% endblock %}
 
 {% block content %}
+  <div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Sorry, the service is unavailable</h1>
+        {# Update the page to tell the user when the service will be available#}
+        <p class="govuk-body">
+          You will be able to use the service from 9am on Monday 19&nbsp;November&nbsp;2018.
+        </p>
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/path/of/next/page" method="post">
-
-        <h1 class="govuk-heading-xl">
-          Sorry, there is a problem with the service
-        </h1>
-
-
-<!-- Try again later -->
-      <p>
-        Try again later.
-      </p>
-
-      <p>
-        We have not saved your answers.
-      </p>
-
-<h2 class="govuk-heading-m">Pay your penalty by bank transfer or cheque</h2>
+        <h2 class="govuk-heading-m">Pay your penalty by bank transfer or cheque</h2>
         <p>
         You can pay your penalty by bank transfer or cheque while the online service is unavailable.
         
@@ -156,13 +146,15 @@
 
 
 
+ 
 
-      <p>
-        If you have any questions, you can 
+        <p class="govuk-body">
+          If you have any questions, you can 
         <a href="https://www.gov.uk/contact-companies-house">contact us</a>.
-        
-      </p>
+        </p>
+      </div>
+    </div>
+  </main>
+</div>
 
-
-      
 {% endblock %}
