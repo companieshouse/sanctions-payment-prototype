@@ -27,7 +27,11 @@
   titleText: "There is a problem",
   errorList: [
     {
-      text: " The details you have entered do not match the information we hold.  Enter the case reference and penalty reference exactly as they are shown on your penalty notice.",
+      text: "Enter the case reference",
+      href: "#customer-number"
+    },
+    {
+      text: "Enter the penalty reference",
       href: "#customer-number"
     }
   ]
@@ -39,23 +43,24 @@
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
           Penalty details
         </h1>
-        <p id="address-line-1-error" class="govuk-error-message">
-      <span class="govuk-visually-hidden">Error:</span> 
-      The details you have entered do not match the information we hold.  Enter the case reference and penalty reference exactly as they are shown on your penalty notice.    </p>
+        
 
 
 <!-- Company number - has style that is prototype code only, not suitable for production -->
     <div class="govuk-form-group govuk-form-group--error">
       <h1 class="govuk-label-wrapper">
         <label class="govuk-label govuk-label--m" for="company-number">
-          What is the company number?
+          What is the case reference?
         </label>
       </h1>
+      <p id="address-line-1-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> 
+      Enter the case reference   </p>
       <div id="company-number-hint" class="govuk-hint">
-         This is 8 characters. Enter it exactly as shown on the penalty notice. For example, 12345678 or AB123456.
+         Enter it exactly as shown on the penalty notice. For example, 1234567890 or OE123456. 
         
       </div>
-      <input value ="28502424" style="text-transform: uppercase;" type="text" class="govuk-input govuk-input--width-10" id="account-number" name="accountNumber" type="text" spellcheck="false" aria-describedby="account-number-hint" inputmode="numeric">
+      <input value ="OE38499" style="text-transform: uppercase;" type="text" class="govuk-input govuk-input--width-10" id="account-number" name="accountNumber" type="text" spellcheck="false" aria-describedby="account-number-hint" inputmode="numeric">
 
     </div>
 
@@ -71,10 +76,13 @@
           What is the penalty reference?
         </label>
       </h1>
+      <p id="address-line-1-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> 
+      Enter the penalty reference </p>
       <div id="penalty-reference-hint" class="govuk-hint">
-       This starts with PN, followed by 8 numbers. For example, PN12345678.
+        This starts with U or Z, followed by 7 numbers. For example, U1234567.
       </div>
-      <input value ="Y8294053" style="text-transform: uppercase;" type="text" class="govuk-input govuk-input--width-10 govuk-input--extra-letter-spacing" id="account-number" name="accountNumber" type="text" spellcheck="false" aria-describedby="account-number-hint" inputmode="numeric">
+      <input value ="U0145728" style="text-transform: uppercase;" type="text" class="govuk-input govuk-input--width-10 govuk-input--extra-letter-spacing" id="account-number" name="accountNumber" type="text" spellcheck="false" aria-describedby="account-number-hint" inputmode="numeric">
     </div>
 
 
