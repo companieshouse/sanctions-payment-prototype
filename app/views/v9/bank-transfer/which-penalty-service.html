@@ -19,7 +19,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" action="/v1/do-you-want-to-sign-in" method="post">
+    <form class="form" action="/v9/bank-transfer/which-penalty-service" method="post">
 
     <h1 class="govuk-heading-xl">
     Find out which bank details to use
@@ -37,45 +37,41 @@
 
 <!-- Heading and radio buttons -->
 <div class="govuk-form-group">
-<fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
-  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-    <h2 class="govuk-fieldset__heading">
+
+
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h2 class="govuk-fieldset__heading">
         What does the penalty reference start with?
       </h2>
-   <p class="govuk-hint govuk-!-margin-top-3">For example, the penalty reference A1234567 starts with A.</p>
-  
-  </legend>
+      <p class="govuk-hint govuk-!-margin-top-3">For example, the penalty reference A1234567 starts with A.</p>
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="bacsRef" name="bacsRef" type="radio" value="A">
+        <label class="govuk-label govuk-radios__label" for="bacsRef">
+          A
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="bacsRef-2" name="bacsRef" type="radio" value="P">
+        <label class="govuk-label govuk-radios__label" for="bacsRef-2">
+          P
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="bacsRef-3" name="bacsRef" type="radio" value="U">
+        <label class="govuk-label govuk-radios__label" for="bacsRef-3">
+          U
+        </label>
+      </div>
+      
+    </div>
+  </fieldset>
+</div>
 
-  <div class="govuk-radios" data-module="govuk-radios">
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway" aria-describedby="signIn-item-hint">
-      <label class="govuk-label govuk-radios__label" for="signIn">
-        A
-      </label>
-      <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-        
-      </div>
-    </div>
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login" aria-describedby="signIn-2-item-hint">
-      <label class="govuk-label govuk-radios__label" for="signIn-2">
-        U
-      </label>
-      <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
-        
-      </div>
-    </div>
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login" aria-describedby="signIn-2-item-hint">
-      <label class="govuk-label govuk-radios__label" for="signIn-2">
-        P
-      </label>
-      <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
-       
-      </div>
-    </div>
-  </div>
-</fieldset>
 </div>
 
 
@@ -104,8 +100,7 @@
 
 <!-- Button -->
       {{ govukButton({
-        text: "Continue",
-        href: "roe-details"
+        text: "Continue"
       }) }}
 
     </form>

@@ -120,6 +120,19 @@ const router = govukPrototypeKit.requests.setupRouter()
                });
   
 
+               // routes for Bacs
+    router.post('/v9/bank-transfer/which-penalty-service', function(request, response) {
+      var bacsRef = request.session.data['bacsRef']
+         if (bacsRef == "A") {
+               response.redirect("/v9/bank-transfer/late-filing-details")
+             } else if (bacsRef == "P") {
+               response.redirect("/v9/bank-transfer/sanctions-details")
+              } else {
+            // sanction
+                response.redirect("/v9/bank-transfer/roe-details")
+              }
+            });
+
 
 
   module.exports=router;
