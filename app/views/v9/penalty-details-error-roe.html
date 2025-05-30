@@ -1,4 +1,4 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main-old-branding.html" %}
 
 {% block pageTitle %}
   {# {% if errorList.length > 0 %}
@@ -27,7 +27,7 @@
   titleText: "There is a problem",
   errorList: [
     {
-      text: " The details you have entered do not match the information we hold.  Enter the case reference and penalty reference exactly as they are shown on your penalty notice.",
+      text: " The details you have entered do not match the information we hold.  Enter the overseas entity ID and penalty reference exactly as they are shown on your penalty notice.",
       href: "#customer-number"
     }
   ]
@@ -48,11 +48,11 @@
     <div class="govuk-form-group govuk-form-group--error">
       <h1 class="govuk-label-wrapper">
         <label class="govuk-label govuk-label--m" for="company-number">
-          What is the case reference?
+          What is the overseas entity ID?
         </label>
       </h1>
       <div id="company-number-hint" class="govuk-hint">
-         Enter it exactly as shown on the penalty notice. For example, 1234567890 or OE123456. 
+         Enter it exactly as shown on the penalty notice. For example, OE123456.
         
       </div>
       <input value ="OE38499" style="text-transform: uppercase;" type="text" class="govuk-input govuk-input--width-10" id="account-number" name="accountNumber" type="text" spellcheck="false" aria-describedby="account-number-hint" inputmode="numeric">

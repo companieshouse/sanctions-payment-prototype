@@ -1,4 +1,4 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main-old-branding.html" %}
 
 {% block pageTitle %}
   {# {% if errorList.length > 0 %}
@@ -27,7 +27,7 @@
   titleText: "There is a problem",
   errorList: [
     {
-      text: "Enter the case reference",
+      text: "Enter the overseas entity ID",
       href: "#customer-number"
     },
     {
@@ -50,14 +50,14 @@
     <div class="govuk-form-group govuk-form-group--error">
       <h1 class="govuk-label-wrapper">
         <label class="govuk-label govuk-label--m" for="company-number">
-          What is the case reference?
+          What is the overseas entity ID?
         </label>
       </h1>
       <p id="address-line-1-error" class="govuk-error-message">
       <span class="govuk-visually-hidden">Error:</span> 
       Enter the case reference   </p>
       <div id="company-number-hint" class="govuk-hint">
-         Enter it exactly as shown on the penalty notice. For example, 1234567890 or OE123456. 
+         Enter it exactly as shown on the penalty notice. For example, OE123456.
         
       </div>
       <input value ="OE38499" style="text-transform: uppercase;" type="text" class="govuk-input govuk-input--width-10" id="account-number" name="accountNumber" type="text" spellcheck="false" aria-describedby="account-number-hint" inputmode="numeric">
