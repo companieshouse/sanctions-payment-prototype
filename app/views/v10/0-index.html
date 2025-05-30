@@ -1,0 +1,452 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+{{ govukTag({
+  text: "Version 10 - new branding",
+  classes: "govuk-tag--green"
+}) }}
+
+
+    <h1 class="govuk-heading-xl govuk-!-margin-top-4">
+      {{ serviceName }}
+    </h1>
+
+
+
+  <ul class="govuk-list govuk-body-m"> 
+    <li>
+    <a class="govuk-link govuk-link--no-visited-state" href="https://companieshouse.atlassian.net/wiki/spaces/NS/pages/4546920451/RAG+Blockers+and+answers
+" target="_blank">
+      RAG status of screens</a>
+    </li>  
+    <li>
+    <a class="govuk-link govuk-link--no-visited-state" href="https://app.mural.co/t/companieshouse8589/m/companieshouse8589/1703086371068/6e4df174ca15dd3ab4246c2620738aa20d29467a?sender=uc287fb0c65a61d3da2202202" target="_blank">
+      Mural prototype flow</a>
+    </li>
+    <li>
+    <a class="govuk-link govuk-link--no-visited-state" href="https://app.mural.co/t/companieshouse8589/m/companieshouse8589/1701270961974/ed546a987d16ca2ce7a3ee3d682dba98905707c1?sender=uc287fb0c65a61d3da2202202" target="_blank">
+      Service design map</a>
+    </li>
+  </ul>
+
+
+{# <h2 class="govuk-heading-m"></h2>  #}
+
+<!-- Start prototype button--> 
+  {{ govukButton({
+    text: "Start prototype",
+    href: "01-pay-a-penalty-to-companies-house"
+  }) }}
+
+
+<h2 class="govuk-heading-m">Screens</h2>
+
+  <ul class="govuk-list govuk-list--bullet">    
+
+
+    <li>
+    <a class="govuk-link govuk-link--no-visited-state" href="01-pay-a-penalty-to-companies-house">
+      Pay a penalty start page
+    </a>
+  </li>
+    <li>
+    <a class="govuk-link govuk-link--no-visited-state" href="02-what-does-the-penalty-reference-start-with">
+      What does the penalty reference start with?
+    </a>
+  </li>  
+
+      <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="03-sign-in">
+      Sign in
+      </a>
+  </li>
+  <br>
+    <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="04-penalty-details-sanction">
+      Penalty details (Sanction)
+      </a>
+      <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="04b-penalty-details-lfp">
+      Penalty details (Late filing penalty)
+      </a>
+        <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="04c-penalty-details-roe">
+      Penalty details (Register an overseas entity)
+      </a>
+  </li>
+      <br>
+      </ul>
+      <h2 class="govuk-heading-s">Summary screen examples</h2>
+  <ul class="govuk-list govuk-list--bullet">   
+    <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="05-penalty-summary-roe">
+      Penalty summary ROE
+      </a>
+  </li>
+  <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="05-penalty-summary-lfp">
+      Penalty summary LFP
+      </a>
+  </li>
+  <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="05-penalty-summary-sanction">
+      Penalty summary sanction
+      </a>
+  </li>
+<br>
+      <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="https://products.payments.service.gov.uk/pay/81dafb56e27f404e9e6ab8b318affd8a">
+      Payment screens (built externally)
+      </a>
+  </li>
+<br>
+  <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="06-confirmation-sanction">
+      Confirmation page (Sanction)
+      </a>
+  </li>
+
+  <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="06b-confirmation-lfp">
+      Confirmation page (Late filing penalty)
+      </a>
+  </li>
+
+  <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="06c-confirmation-roe">
+      Confirmation page (Register an overseas entity)
+      </a>
+  </li>
+
+    <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="06c-confirmation-roe">
+      Confirmation page (MVP only - do not build if the above is possible)
+      </a>
+  </li>
+  <br>
+      <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="email-confirmation-roe">
+      Confirmation email ROE
+      </a>
+  </li>
+  <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="email-confirmation-lfp">
+      Confirmation email LFP
+      </a>
+  </li>
+  <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="email-confirmation-sanction">
+      Confirmation email sanction
+      </a>
+  </li>
+  </ul>
+
+  <h3 class="govuk-heading-m">Error - what does penalty start with</h3>
+    <ul class="govuk-list govuk-list--bullet"> 
+      <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="02-what-does-the-penalty-reference-start-with-error">
+      What does the penalty reference start with error
+      </a> </li>
+      </ul>
+
+  <h3 class="govuk-heading-m">Errors example - details don't match</h3>
+    <ul class="govuk-list govuk-list--bullet">    
+      <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="penalty-details-error-roe">
+      Penalty details ROE - ERROR - details don't match 
+      </a>
+  </li>
+  <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="penalty-details-error-sanction">
+      Penalty details sanction example error 
+      </a> </li>
+      <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="penalty-details-error-lfp">
+      Penalty details LFP example error 
+      </a> </li>
+      </ul>
+      
+      <h3 class="govuk-heading-m">Errors example - enter penalty details</h3>
+    <ul class="govuk-list govuk-list--bullet"> 
+      <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="penalty-details-enter-error-roe">
+      Penalty details - ROE - Enter a case reference, penalty reference error 
+      </a> </li>
+      <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="penalty-details-enter-error-sanction">
+      Penalty details - sanction - Enter a company number, penalty reference error 
+      </a> </li><li>
+      <a class="govuk-link govuk-link--no-visited-state" href="penalty-details-enter-error-lfp">
+      Penalty details - lfp - Enter a company number, penalty reference error 
+      </a> </li>  </ul>
+
+
+
+  <h3 class="govuk-heading-m">Bank transfer screens</h3>
+    <ul class="govuk-list govuk-list--bullet">    
+      <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="bank-transfer/which-penalty-service">
+        Find out which bank details to use
+      </a>
+      <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="bank-transfer/sanctions-details">
+        Pay by bank transfer  (Sanction: P)
+      </a>
+      <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="bank-transfer/late-filing-details">
+        Pay by bank transfer (LFP: A)
+      </a>
+      <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="bank-transfer/roe-details">
+        Pay by bank transfer (ROE: U) 
+      </a>
+      </ul>
+
+
+<h2 class="govuk-heading-m">Stop screens</h2>
+<ul class="govuk-list govuk-list--bullet">    
+      <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="stop-you-need-to-pay-another-way">
+      Stop screen: You need to pay by bank transfer (Sanctions) WIP
+      </a>
+  </li>
+        <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="#">
+      Stop screen: You need to pay by bank transfer (LFP) WIP
+      </a>
+  </li>
+        <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="#">
+      Stop screen: You need to pay by bank transfer (ROE) WIP
+      </a>
+  </li>
+    <br>
+    <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="stop-this-penalty-has-already-been-paid">
+      Stop screen: This penalty has already been paid
+      </a>
+  </li>
+  <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="service-unavailable">
+      Stop screen: This service is unavailable
+      </a>
+  </li>
+  <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="stop-sorry-there-is-a-problem-with-this-service">
+      Stop screen: There is a problem with this service (pre routing)
+      </a>
+  </li>
+</ul>
+
+<!-- Details component -->
+
+<div class="govuk-margin-top-6">
+  <details class="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Archived
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+  <ul class="govuk-list govuk-list--bullet">     
+
+  <li>
+    <a class="govuk-link govuk-link--no-visited-state" href="../index">
+      See earlier versions
+    </a>
+  </li>
+  
+  </div>
+  </div>
+  
+</details>
+
+
+<!-- letters -->
+<h3 class="govuk-heading-m">Letters</h3>
+
+  <ul class="govuk-list govuk-body-m">   
+    <li>
+    <a class="govuk-link govuk-link--no-visited-state" href="https://companieshouse.atlassian.net/wiki/spaces/NS/pages/4546363486/Letters" target="_blank">
+      Penalty notice and warning notice </a>
+    </li>
+    {# <li>
+    <a class="govuk-link govuk-link--no-visited-state" href="https://app.mural.co/t/companieshouse8589/m/companieshouse8589/1701270961974/ed546a987d16ca2ce7a3ee3d682dba98905707c1?sender=uc287fb0c65a61d3da2202202" target="_blank">
+      Warning letter - latest version</a>
+    </li> #}
+  </ul>
+
+
+
+<!-- Backlog -->
+<h3 class="govuk-heading-m">Backlog</h3>
+
+  <ul class="govuk-list govuk-list--bullet">  
+        <li>
+    <a class="govuk-link govuk-link--no-visited-state" href="#" target="_blank">
+      TBA - Start page with interest and multiple payments </a>
+    </li>
+      <li>
+    <a class="govuk-link govuk-link--no-visited-state" href="#" target="_blank">
+      TBA - Generic penalty details screen </a>
+    </li>
+    <br>
+    <li>
+    <a class="govuk-link govuk-link--no-visited-state" href="05b-penalty-summary-multiple-1" target="_blank">
+     Summary details: Multiple (1 company, 1 type e.g. A) </a>
+    </li>
+    <li>
+    <a class="govuk-link govuk-link--no-visited-state" href="https://companieshouse.atlassian.net/wiki/spaces/NS/pages/4546363486/Letters" target="_blank">
+      TBA - Confirmation screen (1 company, 1 type e.g. A) </a>
+    </li>
+        <li>
+    <a class="govuk-link govuk-link--no-visited-state" href="https://companieshouse.atlassian.net/wiki/spaces/NS/pages/4546363486/Letters" target="_blank">
+      TBA - Summary details: Multiple (1 company, 1 type e.g. A) </a>
+    </li>
+        <li>
+    <a class="govuk-link govuk-link--no-visited-state" href="https://companieshouse.atlassian.net/wiki/spaces/NS/pages/4546363486/Letters" target="_blank">
+      TBA - Summary details: Multiple (1 company, 1 type e.g. A) </a>
+    </li>
+
+  </ul>
+  </div>
+
+
+
+
+      {# {{ govukWarningText({
+          text: "This prototype is being actively worked on - things might break or change very quickly",
+          iconFallbackText: "Warning"
+        }) }} #}
+
+
+<div class="govuk-grid-column-full">
+
+  <dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Version history
+    </dt>
+  </div>
+
+            {# Tags - copy and paste correct tag(s)
+              <strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-4">policy</strong>
+              <strong class="govuk-tag govuk-tag--blue">tech</strong>
+              <strong class="govuk-tag govuk-tag--red">More research needed</strong>
+              <strong class="govuk-tag govuk-tag--yellow">user research</strong>
+              <strong class="govuk-tag govuk-tag--pink">design</strong> 
+            </div> #}
+
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    <a class="govuk-link govuk-body-m govuk-link--no-visited-state" 
+      href="https://companieshouse.atlassian.net/wiki/spaces/NS/pages/4548001793/Iterations+to+prototype+after+Round+5+user+testing" target="_blank">
+      <strong>Confluence documentation of changes</strong>
+   </a>
+  {# <p class="govuk-body">Confluence</p> #}
+  </dt>
+<dd class="govuk-summary-list__value">
+<p class="govuk-body">
+<strong>High level changes made in this version</strong><br>
+<ul class="govuk-list govuk-list--bullet">
+<li>x</li>
+<li>x</li>
+<strong class="govuk-tag govuk-tag--red">More research needed</strong>
+<li>x</li>
+<strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-4">policy</strong>
+<li>x</li>
+<strong class="govuk-tag govuk-tag--yellow">user research</strong>
+
+
+
+{# <strong class="govuk-tag govuk-tag--blue">tech</strong> 
+<strong class="govuk-tag govuk-tag--red">More research needed</strong>
+<strong class="govuk-tag govuk-tag--yellow">user research</strong>
+<strong class="govuk-tag govuk-tag--blue">tech</strong> 
+<strong class="govuk-tag govuk-tag--yellow">user research</strong>
+<strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-4">policy</strong>
+ #}
+
+
+
+
+</ul>
+</dd>
+</div>
+
+
+
+   <h2 class="govuk-heading-l govuk-!-margin-top-8">
+      Research
+    </h2>
+      
+      
+            <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Round of testing
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list">
+            <li>Round 1 informed this prototype</li>
+        </dd>
+      </div>
+
+            <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Session dates
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list">
+            <li>22 January - 25 January 2024</li>
+        </dd>
+      </div>
+      
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Participants
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list">
+            <li>4 x participants:</li>
+            <li>1 x accountant/director/CEO</li>
+            <li>2 x accountants</li>
+            <li>1 x company secretary</li>
+        </dd>
+      </div>
+
+       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Testing focus
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list">
+            <li>Understand users expectations about the process and ability to pay a penalty classed as (other) </li>
+            {# <li>Terminology</li>
+            <li>Caveats</li> #}
+        </dd>
+      </div>
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Insights
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <a href="https://app.mural.co/t/companieshouse8589/m/companieshouse8589/1705402275211/e73753d49e0a2e05555780311da0f815816f1c2e?sender=uc287fb0c65a61d3da2202202"
+          target="_blank">Round 1 research findings Mural</a> <br>
+
+        </dd>
+      </div>
+
+  </div>
+</div>
+
+{% endblock %}
