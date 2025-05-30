@@ -1,3 +1,8 @@
 {
-  "serviceName": "Pay a penalty to Companies House"
+  "serviceName": "Pay a penalty to Companies House",
+   "plugins": {
+    "govuk-frontend": {
+      "rebrand": true
+    }
+  }
 }
