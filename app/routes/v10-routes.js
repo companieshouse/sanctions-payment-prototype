@@ -133,6 +133,17 @@ const router = govukPrototypeKit.requests.setupRouter()
               }
             });
 
+router.post('/v10/04-penalty-details-sanction', function (req, res) {
+  res.redirect('/v10/05-penalty-summary-sanction');
+});
+            
+router.post('/v10/04b-penalty-details-lfp', function (req, res) {
+  res.redirect('/v10/05-penalty-summary-lfp');
+});
+
+router.post('/v10/04c-penalty-details-roe', function (req, res) {
+  res.redirect('/v10/05-penalty-summary-roe');
+});
 
 
   module.exports=router;
