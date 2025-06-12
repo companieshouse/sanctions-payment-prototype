@@ -16,15 +16,15 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 //   // ******* penalty type question ********************************
 
-// router.post('/v9/02-what-does-the-penalty-reference-start-with', function(request, response) {
+// router.post('/v10/02-what-does-the-penalty-reference-start-with', function(request, response) {
 //   var penalty = request.body.penalty; // Assuming you're using body-parser middleware to parse the form data
 
 //   if (penalty === "sanction") {
-//     response.redirect("/v9/04-penalty-details-sanction");
+//     response.redirect("/v10/04-penalty-details-sanction");
 //   } else if (penalty === "roe") {
-//     response.redirect("/v9/04c-penalty-details-roe");
+//     response.redirect("/v10/04c-penalty-details-roe");
 //   } else if (penalty === "lfp") {
-//     response.redirect("/v9/04b-penalty-details-lfp");
+//     response.redirect("/v10/04b-penalty-details-lfp");
 //   } else {
 //     // Handle any other case or error scenario
 //     response.redirect("/error-page");
@@ -35,9 +35,9 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 
   // ******* filter-question ********************************
-  router.get('/v9/filter-question', function (req, res) {
+  router.get('/v10/filter-question', function (req, res) {
     // Set URl
-    res.render('v9/filter-question', {
+    res.render('v10/filter-question', {
       currentUrl: req.originalUrl
     })
   })
@@ -45,7 +45,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 
   // ******* ERROR filter-question ********************************
-  // router.post('/v9/filter-question', function (req, res) {
+  // router.post('/v10/filter-question', function (req, res) {
     // Create empty array
    // var errors = []
   
@@ -58,17 +58,17 @@ const router = govukPrototypeKit.requests.setupRouter()
    //   })
   
       // Re-show page with error value as true so errors will show
-    //  res.render('v9/filter-question', {
+    //  res.render('v10/filter-question', {
      //   errorApplyToYou: true,
     //    errorList: errors
    //   })
  //  } else {
           // User inputted a specific value, in this case 'none'
        //   if (req.session.data['applyToYou'] == 'none') {   // this was === which doesn't work, changing to == seems to work?!
-        //    res.redirect('/v9/sign-in')
+        //    res.redirect('/v10/sign-in')
        //   } else {
             // User inputted any other value
-        //    res.redirect('/v9/stop-you-need-to-pay-another-way')
+        //    res.redirect('/v10/stop-you-need-to-pay-another-way')
       //    }
    // }
  // })
@@ -76,7 +76,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 
     // // ******* ERROR penalty details ********************************
-    // router.post('/v9/penalty-details', function (req, res) {
+    // router.post('/v10/penalty-details', function (req, res) {
     //   // Create empty array
     //   var errors = []
     
@@ -89,47 +89,47 @@ const router = govukPrototypeKit.requests.setupRouter()
     //     })
     
     //     // Re-show page with error value as true so errors will show
-    //     res.render('v9/penalty-details', {
+    //     res.render('v10/penalty-details', {
     //       errorPenaltyReference: true,
     //       errorList: errors
     //     })           
     //   } else {
     //       // If selected goes to next page
-    //       res.redirect('/v9/penalty-summary')
+    //       res.redirect('/v10/penalty-summary')
     //     }           
     //   })
   
   
     // routes for 'What does the penalty reference start with
-    router.post('/v9/03-sign-in', function(request, response) {
+    router.post('/v10/03-sign-in', function(request, response) {
        var penalty = request.session.data['penalty']
           if (penalty == "lfp") {
-                response.redirect("/v9/04b-penalty-details-lfp")
+                response.redirect("/v10/04b-penalty-details-lfp")
               } else if (penalty == "roe") {
-                response.redirect("/v9/04c-penalty-details-roe")
+                response.redirect("/v10/04c-penalty-details-roe")
                } else {
              // sanction
-                 response.redirect("/v9/04-penalty-details-sanction")
+                 response.redirect("/v10/04-penalty-details-sanction")
                }
              });
 
 
-    router.post('/v9/02-what-does-the-penalty-reference-start-with', function(request, response) {
-       response.redirect("/v9/03-sign-in")
+    router.post('/v10/02-what-does-the-penalty-reference-start-with', function(request, response) {
+       response.redirect("/v10/03-sign-in")
                 
                });
   
 
                // routes for Bacs
-    router.post('/v9/bank-transfer/which-penalty-service', function(request, response) {
+    router.post('/v10/bank-transfer/which-penalty-service', function(request, response) {
       var bacsRef = request.session.data['bacsRef']
          if (bacsRef == "A") {
-               response.redirect("/v9/bank-transfer/late-filing-details")
+               response.redirect("/v10/bank-transfer/late-filing-details")
              } else if (bacsRef == "P") {
-               response.redirect("/v9/bank-transfer/sanctions-details")
+               response.redirect("/v10/bank-transfer/sanctions-details")
               } else {
             // sanction
-                response.redirect("/v9/bank-transfer/roe-details")
+                response.redirect("/v10/bank-transfer/roe-details")
               }
             });
 
